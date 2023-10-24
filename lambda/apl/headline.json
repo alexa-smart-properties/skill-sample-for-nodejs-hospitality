@@ -1,0 +1,42 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.8",
+        "theme": "dark",
+        "import": [
+            {
+                "name": "alexa-layouts",
+                "version": "1.5.0"
+            }
+        ],
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "item": [
+                {
+                    "type": "AlexaHeadline",
+                    "id": "MainHeadline",
+                    "primaryText": "${payload.headlineTemplateData.text}",
+                    "secondaryText": "${payload.headlineTemplateData.sub}",
+                    "headerBackButton": false,
+                    "headerAttributionImage": "${payload.headlineTemplateData.logoUrl}",
+                    "headerAttributionPrimacy": true,
+                    "footerHintText": "${payload.headlineTemplateData.hintText}",
+                    "backgroundImageSource": "${payload.headlineTemplateData.backgroundImage}",
+                    "backgroundColorOverlay": true
+                }
+            ]
+        }
+    },
+    "datasources": {
+        "headlineTemplateData": {
+            "backgroundImage": "<TO DO: Add url to your background image>",
+            "text": "Welcome to the \nAlexa Smart Properties Hotel",
+            "sub": " ",
+            "logoUrl": "TO DO: Add url your logo image>",
+            "hintText": "Try, \"Alexa, where is the pool?\""
+        }
+    },
+    "sources": {}
+}

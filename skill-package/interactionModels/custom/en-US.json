@@ -1,0 +1,1748 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "demo hotel",
+            "modelConfiguration": {
+                "fallbackIntentSensitivity": {
+                    "level": "LOW"
+                }
+            },
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "GeneralPropertyFeaturesIntent",
+                    "slots": [
+                        {
+                            "name": "facility_type",
+                            "type": "facility_type",
+                            "samples": [
+                                "tell me about the {facility_type}",
+                                "the hotel {facility_type}",
+                                "the {facility_type}",
+                                "information on {facility_type}",
+                                "{facility_type} please",
+                                "{facility_type}",
+                                "tell me about {facility_type}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "tell me about the {facility_type}",
+                        "{facility_type}",
+                        "tell me about the hotel {facility_type}",
+                        "tell me about {facility_type} in this building",
+                        "tell me about {facility_type} in this property",
+                        "tell me about {facility_type}"
+                    ]
+                },
+                {
+                    "name": "PropertyFeatureLocationIntent",
+                    "slots": [
+                        {
+                            "name": "facility_type",
+                            "type": "facility_type",
+                            "samples": [
+                                "the location of the {facility_type}",
+                                "the location of {facility_type}",
+                                "I am looking for {facility_type}",
+                                "where is the {facility_type}",
+                                "where is {facility_type}",
+                                "{facility_type} please",
+                                "{facility_type}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "how to find {facility_type}",
+                        "where is the {facility_type}",
+                        "{facility_type} location",
+                        "property feature location {facility_type}",
+                        "where  is {facility_type}",
+                        "how can I get to {facility_type}",
+                        "how do I find {facility_type}",
+                        "i want to go to  {facility_type}",
+                        "find the {facility_type}",
+                        "find for me {facility_type}",
+                        "find me {facility_type}",
+                        "in what place is {facility_type}",
+                        "what is location of {facility_type}",
+                        "where can i find {facility_type}",
+                        "where do i find {facility_type}",
+                        "where do you find {facility_type}",
+                        "where is location of {facility_type}"
+                    ]
+                },
+                {
+                    "name": "PropertyFeatureOperatingHoursIntent",
+                    "slots": [
+                        {
+                            "name": "facility_type",
+                            "type": "facility_type",
+                            "samples": [
+                                "the hotel {facility_type}",
+                                "the {facility_type}",
+                                "hours of {facility_type}",
+                                "{facility_type} please",
+                                "{facility_type}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "what are the {facility_type} operating hours",
+                        "what are the {facility_type} business hours",
+                        "what are the business hours of {facility_type}",
+                        "what is the hours of {facility_type}",
+                        "what are the hours of {facility_type}",
+                        "what is the business hours of {facility_type}",
+                        "what is the {facility_type} business hours",
+                        "what is the {facility_type} operating hours",
+                        "{facility_type} working hours",
+                        "{facility_type} work hours",
+                        "{facility_type} operation hours",
+                        "{facility_type} operating hours",
+                        "when does {facility_type} open",
+                        "when does {facility_type} close",
+                        "what time does an {facility_type} close",
+                        "what time does an {facility_type} open",
+                        "when does an {facility_type} open",
+                        "when does an {facility_type} close",
+                        "when does a {facility_type} open",
+                        "when does a {facility_type} close",
+                        "what time does a {facility_type} open",
+                        "what time does {facility_type} close",
+                        "what time does the {facility_type} open",
+                        "when does the {facility_type} close",
+                        "when does the {facility_type} open",
+                        "how early is {facility_type} open",
+                        "what time is {facility_type} closed",
+                        "what time dose {facility_type} close",
+                        "what time does {facility_type} open",
+                        "{facility_type} business hours",
+                        "{facility_type} working time",
+                        "{facility_type} working hour",
+                        "{facility_type} closing time",
+                        "{facility_type} closing hour",
+                        "{facility_type} close time",
+                        "{facility_type} close hour",
+                        "{facility_type} opening time",
+                        "{facility_type} opening hour",
+                        "{facility_type} open time",
+                        "{facility_type} open hour",
+                        "property operating hours {facility_type}",
+                        "when is {facility_type} open",
+                        "what time is {facility_type} open",
+                        "how late is {facility_type} open",
+                        "when can we go to {facility_type}",
+                        "what are {facility_type} hours",
+                        "what are {facility_type} opening hours",
+                        "when is {facility_type} available",
+                        "when can I go to {facility_type}"
+                    ]
+                },
+                {
+                    "name": "RoomDeliverableRequestIntent",
+                    "slots": [
+                        {
+                            "name": "deliverable_room_item",
+                            "type": "deliverable_room_item",
+                            "samples": [
+                                "{deliverable_room_item} please",
+                                "I'd like {deliverable_room_item}",
+                                "Can I have {deliverable_room_item}",
+                                "Can I get {deliverable_room_item}",
+                                "I would like {deliverable_room_item}",
+                                "{deliverable_room_item} "
+                            ]
+                        },
+                        {
+                            "name": "item_quantity",
+                            "type": "AMAZON.NUMBER",
+                            "samples": [
+                                "{item_quantity} please",
+                                "{item_quantity} items",
+                                "{item_quantity}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "i need something delivered",
+                        "i need something brought to my room",
+                        "I forgot something",
+                        "i want to get more {deliverable_room_item}",
+                        "i want to have more {deliverable_room_item}",
+                        "i need more {deliverable_room_item}",
+                        "can you get me {deliverable_room_item}",
+                        "i need {item_quantity} more {deliverable_room_item}",
+                        "can i have {item_quantity} more {deliverable_room_item}",
+                        "can i get more {deliverable_room_item}",
+                        "can you deliver {item_quantity} {deliverable_room_item} to my room",
+                        "can you deliver {item_quantity} {deliverable_room_item} to me",
+                        "can you deliver {deliverable_room_item} to my room",
+                        "can you deliver {deliverable_room_item} to me",
+                        "i forgot to bring {deliverable_room_item}",
+                        "i need extra {deliverable_room_item}",
+                        "i want extra {deliverable_room_item}",
+                        "can I have extra {deliverable_room_item}",
+                        "i want more {deliverable_room_item}",
+                        "bring {deliverable_room_item} to my room",
+                        "bring {item_quantity} {deliverable_room_item} to my room",
+                        "can i have more {deliverable_room_item}",
+                        "room deliverable request {item_quantity} {deliverable_room_item}",
+                        "room deliverable request {deliverable_room_item}",
+                        "room deliverable request a {deliverable_room_item}",
+                        "i need {deliverable_room_item}",
+                        "i need a {deliverable_room_item}",
+                        "can I have {deliverable_room_item}",
+                        "can I have a {deliverable_room_item}",
+                        "please can I have {deliverable_room_item}",
+                        "can I have {deliverable_room_item} sent to my room",
+                        "please can i have {deliverable_room_item} sent to my room",
+                        "can I have {deliverable_room_item} delivered",
+                        "please can I have {deliverable_room_item} delivered",
+                        "can I get {deliverable_room_item}",
+                        "please can I get {deliverable_room_item}",
+                        "can I get {deliverable_room_item} sent to my room",
+                        "i need something",
+                        "i need something delivered to my room",
+                        "can I have {item_quantity} {deliverable_room_item}",
+                        "i need {item_quantity} {deliverable_room_item}",
+                        "please can I have {item_quantity} {deliverable_room_item}",
+                        "can I have {item_quantity} {deliverable_room_item} sent to my room",
+                        "please can i have {item_quantity} {deliverable_room_item} sent to my room",
+                        "can I have {item_quantity} {deliverable_room_item} delivered",
+                        "please can I have {item_quantity} {deliverable_room_item} delivered",
+                        "can I get {item_quantity} {deliverable_room_item}",
+                        "please can I get {item_quantity} {deliverable_room_item}",
+                        "can I get {item_quantity} {deliverable_room_item} sent to my room"
+                    ]
+                },
+                {
+                    "name": "CheckoutRequestIntent",
+                    "slots": [
+                        {
+                            "name": "checkout",
+                            "type": "checkout"
+                        }
+                    ],
+                    "samples": [
+                        "please {checkout}",
+                        "{checkout} please",
+                        "we would like to {checkout}",
+                        "we want to {checkout}",
+                        "i would like to {checkout}",
+                        "i want to {checkout}",
+                        "{checkout} Request",
+                        "{checkout}",
+                        "{checkout} now",
+                        "can i {checkout}",
+                        "please can i {checkout}",
+                        "can we {checkout}",
+                        "please can we {checkout}",
+                        "can you help me {checkout}",
+                        "please can you help me {checkout}",
+                        "could i {checkout}",
+                        "please could i {checkout}"
+                    ]
+                },
+                {
+                    "name": "HotelInformationIntent",
+                    "slots": [
+                        {
+                            "name": "hotel_information",
+                            "type": "hotel_information",
+                            "samples": [
+                                "{hotel_information} please",
+                                "{hotel_information}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "give me the {hotel_information}",
+                        "give me the hotel {hotel_information}",
+                        "what is the {hotel_information}",
+                        "what is the hotel {hotel_information}",
+                        "can I have {hotel_information}",
+                        "can I get the {hotel_information}",
+                        "can I get the hotel {hotel_information}",
+                        "can I get hotel {hotel_information}",
+                        "can I have hotel {hotel_information}",
+                        "i would like to know {hotel_information}",
+                        "i want to know hotel {hotel_information}",
+                        "can I know hotel {hotel_information}",
+                        "what is hotel {hotel_information}",
+                        "give me hotel {hotel_information}",
+                        "let me know hotel {hotel_information}",
+                        "tell me about hotel {hotel_information}",
+                        "hotel {hotel_information}"
+                    ]
+                },
+                {
+                    "name": "CheckoutTimeIntent",
+                    "slots": [
+                        {
+                            "name": "checkout",
+                            "type": "checkout"
+                        }
+                    ],
+                    "samples": [
+                        "tell me when to {checkout}",
+                        "what time do I need to {checkout}",
+                        "tell me my {checkout} time",
+                        "when is my {checkout} time",
+                        "tell me the {checkout} time",
+                        "{checkout} time",
+                        "when do we have to {checkout}",
+                        "when is our {checkout} time",
+                        "tell me our {checkout} time",
+                        "tell me {checkout} time",
+                        "what time do we need to {checkout}",
+                        "what time is {checkout}",
+                        "when do I have to {checkout}",
+                        "when do I {checkout}",
+                        "what is our {checkout} timie",
+                        "tell me when {checkout} time is",
+                        "when is {checkout}",
+                        "what is my {checkout} time"
+                    ]
+                },
+                {
+                    "name": "WifiAccessQAIntent",
+                    "slots": [
+                        {
+                            "name": "wifi_access_qa",
+                            "type": "wifi_access_qa"
+                        }
+                    ],
+                    "samples": [
+                        "let me know the {wifi_access_qa} password",
+                        "how can I get the {wifi_access_qa} password",
+                        "how can I find the {wifi_access_qa} password",
+                        "give me the {wifi_access_qa} password for this room",
+                        "can I get the {wifi_access_qa} code",
+                        "can I get {wifi_access_qa} code",
+                        "give me the {wifi_access_qa} code",
+                        "tell me the {wifi_access_qa} password",
+                        "give me the {wifi_access_qa} password",
+                        "can I get the {wifi_access_qa} password",
+                        "can I get {wifi_access_qa} password",
+                        "give me {wifi_access_qa} password",
+                        "tell me {wifi_access_qa} password",
+                        "give me {wifi_access_qa} code",
+                        "internet {wifi_access_qa} password",
+                        "give me {wifi_access_qa} password for this room",
+                        "help me log into {wifi_access_qa}",
+                        "how can I find {wifi_access_qa} password",
+                        "how can I get {wifi_access_qa} password",
+                        "how can I get {wifi_access_qa}",
+                        "i need {wifi_access_qa} access",
+                        "let me know {wifi_access_qa} password",
+                        "{wifi_access_qa} login password",
+                        "i need {wifi_access_qa} connection",
+                        "{wifi_access_qa} details please",
+                        "{wifi_access_qa} information",
+                        "show me {wifi_access_qa} information",
+                        "how to use {wifi_access_qa}",
+                        "how do I connect to {wifi_access_qa}",
+                        "hotel {wifi_access_qa} information",
+                        "give me information on hotel {wifi_access_qa}",
+                        "do you have {wifi_access_qa} here",
+                        "tell me {wifi_access_qa} code",
+                        "{wifi_access_qa} access",
+                        "{wifi_access_qa} code",
+                        "what is {wifi_access_qa} password",
+                        "what is {wifi_access_qa} code",
+                        "{wifi_access_qa} access QA",
+                        "{wifi_access_qa} code QA",
+                        "{wifi_access_qa} password QA",
+                        "what is {wifi_access_qa} access",
+                        "{wifi_access_qa} password"
+                    ]
+                },
+                {
+                    "name": "WifiAccessFreeIntent",
+                    "slots": [
+                        {
+                            "name": "wifi_access_qa",
+                            "type": "wifi_access_qa"
+                        }
+                    ],
+                    "samples": [
+                        "tell me about the free {wifi_access_qa}",
+                        "tell me about free {wifi_access_qa}",
+                        "free {wifi_access_qa} access",
+                        "how can I get {wifi_access_qa}",
+                        "how can I get free {wifi_access_qa} here",
+                        "search free {wifi_access_qa}",
+                        "what free {wifi_access_qa} is available here",
+                        "is there free {wifi_access_qa} here",
+                        "is there free {wifi_access_qa}",
+                        "give me free {wifi_access_qa}",
+                        "free {wifi_access_qa}",
+                        "find free {wifi_access_qa}",
+                        "does this room have free {wifi_access_qa}",
+                        "connect to free {wifi_access_qa}",
+                        "can I get free {wifi_access_qa}",
+                        "give me information on free {wifi_access_qa}",
+                        "give me information on {wifi_access_qa}",
+                        "can I get {wifi_access_qa}",
+                        "connect to {wifi_access_qa}",
+                        "do I have to pay for {wifi_access_qa}",
+                        "does this room have {wifi_access_qa}",
+                        "find {wifi_access_qa}",
+                        "{wifi_access_qa}",
+                        "give me {wifi_access_qa}",
+                        "is there {wifi_access_qa}",
+                        "is there {wifi_access_qa} here",
+                        "use {wifi_access_qa}",
+                        "what {wifi_access_qa} is available here",
+                        "search {wifi_access_qa}",
+                        "how can i get {wifi_access_qa} here",
+                        "tell me about {wifi_access_qa}",
+                        "{wifi_access_qa} access"
+                    ]
+                },
+                {
+                    "name": "RoomCleaningRequestIntent",
+                    "slots": [
+                        {
+                            "name": "room_cleaning",
+                            "type": "room_cleaning"
+                        }
+                    ],
+                    "samples": [
+                        "request {room_cleaning} service",
+                        "request {room_cleaning}",
+                        "can I get {room_cleaning} service",
+                        "can I get {room_cleaning}",
+                        "clean my room please",
+                        "can you clean my room",
+                        "i would like to {room_cleaning}",
+                        "i need to {room_cleaning}",
+                        "i want to {room_cleaning}",
+                        "make up my room please",
+                        "make up my room",
+                        "please make up my room",
+                        "i want {room_cleaning} service",
+                        "call {room_cleaning}",
+                        "send {room_cleaning}",
+                        "i need my room cleaned",
+                        "i would like to my room cleaned",
+                        "clean my room",
+                        "please clean my room",
+                        "please call {room_cleaning}",
+                        "i would like my room cleaned",
+                        "please get {room_cleaning}",
+                        "please have my room cleaned",
+                        "send a {room_cleaning}",
+                        "please send {room_cleaning}",
+                        "call the {room_cleaning}",
+                        "please call the {room_cleaning}",
+                        "will you get {room_cleaning}",
+                        "please will you get {room_cleaning}",
+                        "set {room_cleaning} status",
+                        "set {room_cleaning} mode",
+                        "change to {room_cleaning} status",
+                        "{room_cleaning} status",
+                        "my room needs {room_cleaning}",
+                        "could you clean my room",
+                        "turn on {room_cleaning}",
+                        "i want {room_cleaning}",
+                        "i need {room_cleaning} service",
+                        "{room_cleaning} Request",
+                        "{room_cleaning}",
+                        "please have {room_cleaning}"
+                    ]
+                },
+                {
+                    "name": "RoomCleaningCancelIntent",
+                    "slots": [
+                        {
+                            "name": "room_cleaning",
+                            "type": "room_cleaning"
+                        }
+                    ],
+                    "samples": [
+                        "turn off {room_cleaning}",
+                        "no need to {room_cleaning} ",
+                        "no {room_cleaning}",
+                        "cancel {room_cleaning}",
+                        "{room_cleaning} Cancel",
+                        "i don't need {room_cleaning}",
+                        "don't {room_cleaning}"
+                    ]
+                },
+                {
+                    "name": "BillingInformationIntent",
+                    "slots": [
+                        {
+                            "name": "billing_information",
+                            "type": "billing_information"
+                        }
+                    ],
+                    "samples": [
+                        "how much do I owe you for my room",
+                        "how much do i owe you",
+                        "how much do i owe you for the room",
+                        "how much do i owe you for this room",
+                        "what is my total bill",
+                        "how much is my bill",
+                        "how much should I pay you",
+                        "how much do i pay you for this room",
+                        "how much do i pay you for the room",
+                        "how much do i pay you",
+                        "how much do i pay for my room",
+                        "Check {billing_information} information",
+                        "Can I have {billing_information}",
+                        "Can I get {billing_information}",
+                        "How much do I have to pay you",
+                        "Show me {billing_information} information",
+                        "{billing_information} Information"
+                    ]
+                },
+                {
+                    "name": "InRoomFoodRequestIntent",
+                    "slots": [
+                        {
+                            "name": "deliverable_food_item",
+                            "type": "deliverable_food_item",
+                            "samples": [
+                                "I'd like {deliverable_food_item}",
+                                "can I have {deliverable_food_item}",
+                                "{deliverable_food_item} please",
+                                "I'd like to get {deliverable_food_item}",
+                                "can I get {deliverable_food_item}",
+                                "I would like {deliverable_food_item}",
+                                "{deliverable_food_item}"
+                            ]
+                        },
+                        {
+                            "name": "in_room_service",
+                            "type": "in_room_service"
+                        },
+                        {
+                            "name": "room_food_type",
+                            "type": "room_food_type"
+                        }
+                    ],
+                    "samples": [
+                        "can i get {in_room_service}",
+                        "I want to order {in_room_service}",
+                        "can I have {in_room_service}",
+                        "can I have {room_food_type} ",
+                        "i want to order {room_food_type}",
+                        "bring me {room_food_type}",
+                        "we would like to get {room_food_type} delivered",
+                        "order {room_food_type} to my room",
+                        "send me {room_food_type}",
+                        "can I get {room_food_type} ",
+                        "i want {room_food_type} ",
+                        "bring me {deliverable_food_item}",
+                        "In Room Food Request {deliverable_food_item}",
+                        "in room food request",
+                        "{in_room_service}",
+                        "i want {in_room_service}",
+                        "i want {in_room_service} delivered",
+                        "i would like some {in_room_service}",
+                        "can I get some {in_room_service}",
+                        "order {in_room_service}",
+                        "order in {in_room_service}",
+                        "i want a {deliverable_food_item}",
+                        "have {in_room_service}",
+                        "can I get {deliverable_food_item}",
+                        "i would like {deliverable_food_item}",
+                        "send me {deliverable_food_item}",
+                        "order {deliverable_food_item} to my room",
+                        "order a {deliverable_food_item}",
+                        "we would like to get {deliverable_food_item} delivered",
+                        "please we would like to get {deliverable_food_item} delivered"
+                    ]
+                },
+                {
+                    "name": "GeneralRoomServiceIntent",
+                    "slots": [
+                        {
+                            "name": "in_room_service",
+                            "type": "in_room_service"
+                        }
+                    ],
+                    "samples": [
+                        "what {in_room_service} is available",
+                        "hotel {in_room_service}",
+                        "show me {in_room_service} information",
+                        "General {in_room_service}",
+                        "tell me about {in_room_service}",
+                        "what can I get from {in_room_service}",
+                        "what can I order from {in_room_service}",
+                        "what {in_room_service} can you do"
+                    ]
+                },
+                {
+                    "name": "AmenityInformationIntent",
+                    "slots": [
+                        {
+                            "name": "amenity_information",
+                            "type": "amenity_information"
+                        }
+                    ],
+                    "samples": [
+                        "what are the {amenity_information}",
+                        "general Property {amenity_information}",
+                        "tell me about the hotel {amenity_information}",
+                        "what are the {amenity_information} available at this hotel",
+                        "what are the {amenity_information} of this hotel",
+                        "what are the {amenity_information} at this hotel",
+                        "what {amenity_information} are available at this property",
+                        "what {amenity_information} are available at this hotel",
+                        "what {amenity_information} are available here",
+                        "what {amenity_information} are available",
+                        "what {amenity_information} can you provide",
+                        "inform me of {amenity_information} that are available",
+                        "information about {amenity_information}",
+                        "what are {amenity_information}",
+                        "{amenity_information}",
+                        "tell me about {amenity_information}"
+                    ]
+                },
+                {
+                    "name": "RoomTurnOverIntent",
+                    "slots": [],
+                    "samples": [
+                        "i am done with the room",
+                        "the room is cleaned",
+                        "i have cleaned the room",
+                        "the room is clean",
+                        "this room is turned over"
+                    ]
+                },
+                {
+                    "name": "PINValidationIntent",
+                    "slots": [
+                        {
+                            "name": "mypin",
+                            "type": "AMAZON.NUMBER"
+                        }
+                    ],
+                    "samples": [
+                        "{mypin}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "facility_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cafe",
+                                "synonyms": [
+                                    "coffee shop",
+                                    "hotel cafe"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pool",
+                                "synonyms": [
+                                    "swimming pool",
+                                    "pools",
+                                    "swimming bath",
+                                    "swimming hole",
+                                    "swimmers pool",
+                                    "hotel swimming pool",
+                                    "hotel pools",
+                                    "hotel pool",
+                                    "hotel swimming bath",
+                                    "hotel swimming hole",
+                                    "hotel swimmers pool"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "business",
+                                "synonyms": [
+                                    "business center",
+                                    "business room",
+                                    "copy room",
+                                    "printer room",
+                                    "hotel business room",
+                                    "hotel business center",
+                                    "hotel copy room",
+                                    "hotel printer room"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conference",
+                                "synonyms": [
+                                    "conference room",
+                                    "conference center",
+                                    "conferencing center",
+                                    "meeting room",
+                                    "hotel conference center",
+                                    "hotel conferencing center",
+                                    "hotel conference center",
+                                    "hotel meeting room"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shop",
+                                "synonyms": [
+                                    "souvenir shop",
+                                    "marketplace",
+                                    "market place",
+                                    "gift shop",
+                                    "hotel shop",
+                                    "hotel shopping center",
+                                    "hotel souvenir shop",
+                                    "hotel gift shop"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bar",
+                                "synonyms": [
+                                    "lounge",
+                                    "hotel bar",
+                                    "hotel pub",
+                                    "hotel tavern",
+                                    "tavern",
+                                    "pub"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "restaurant",
+                                "synonyms": [
+                                    "dining",
+                                    "chophouse",
+                                    "canteen",
+                                    "bistro",
+                                    "diner",
+                                    "grill",
+                                    "hotel restaurant",
+                                    "hotel chophouse",
+                                    "hotel canteen",
+                                    "hotel bistro",
+                                    "hotel diner",
+                                    "hotel grill"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "gym",
+                                "synonyms": [
+                                    "fitness center",
+                                    "hotel fitness center",
+                                    "fitness",
+                                    "workout center",
+                                    "weight room",
+                                    "workout room",
+                                    "treadmills",
+                                    "weights",
+                                    "weight lifting room",
+                                    "hotel weight room",
+                                    "hotel workout center",
+                                    "hotel workout room",
+                                    "hotel gym",
+                                    "hotel weight lifting room"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ballroom",
+                                "synonyms": [
+                                    "ball room",
+                                    "hotel ballroom",
+                                    "hotel ball room"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "concierge",
+                                "synonyms": [
+                                    "front desk"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "spa",
+                                "synonyms": [
+                                    "day spa",
+                                    "health club",
+                                    "health spa"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deliverable_room_item",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "iron"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bathrobe",
+                                "synonyms": [
+                                    "bath robe"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "bath slippers",
+                                "synonyms": [
+                                    "slippers"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "umbrella"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "comb"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hair dryer",
+                                "synonyms": [
+                                    "hair blower",
+                                    "hand blower",
+                                    "blow dryer",
+                                    "blow drier",
+                                    "dryer",
+                                    "drier"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soap",
+                                "synonyms": [
+                                    "hand soap",
+                                    "bar of soap"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "shampoo",
+                                "synonyms": [
+                                    "hair wash",
+                                    "bottle of shampoo"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "conditioner",
+                                "synonyms": [
+                                    "bottle of conditioner",
+                                    "hair conditioner"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hair products",
+                                "synonyms": [
+                                    "hair product",
+                                    "shampoo and conditioner"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tissue",
+                                "synonyms": [
+                                    "rolls of TP",
+                                    "TP",
+                                    "toilet paper",
+                                    "bath tissue",
+                                    "wipes",
+                                    "rolls of bath tissue",
+                                    "rolls of toilet paper"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pillow",
+                                "synonyms": [
+                                    "cushions",
+                                    "more pillows",
+                                    "pillows",
+                                    "bed pillow",
+                                    "cushion"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "duvet covers",
+                                "synonyms": [
+                                    "comforter",
+                                    "duvet"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "blanket",
+                                "synonyms": [
+                                    "blankets"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sheet",
+                                "synonyms": [
+                                    "sheets",
+                                    "bed linen",
+                                    "bed sheets",
+                                    "bed sheet",
+                                    "fitted sheet"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "towel",
+                                "synonyms": [
+                                    "more towels",
+                                    "towels",
+                                    "bath towel",
+                                    "beach towel"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ironing board",
+                                "synonyms": [
+                                    "iron board"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "extra bed",
+                                "synonyms": [
+                                    "cot",
+                                    "rollaway",
+                                    "rollaway bed",
+                                    "folding bed"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "toothpaste",
+                                "synonyms": [
+                                    "tooth paste"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "toothbrush",
+                                "synonyms": [
+                                    "tooth brush"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Mouth wash",
+                                "synonyms": [
+                                    "bottle of mouth wash"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "razor",
+                                "synonyms": [
+                                    "razor blade",
+                                    "shaving kit",
+                                    "shaving kits"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "property_feature_location",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "location",
+                                "synonyms": [
+                                    "facility location",
+                                    "feature location",
+                                    "place"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "general_property_feature",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "features",
+                                "synonyms": [
+                                    "facility information",
+                                    "feature information",
+                                    "property features",
+                                    "facilities"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "property_feature_operating",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "operating hour",
+                                "synonyms": [
+                                    "operation hours",
+                                    "work hours",
+                                    "working hours",
+                                    "business hours",
+                                    "working time",
+                                    "working hour",
+                                    "business hour"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "checkout",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "checkout",
+                                "synonyms": [
+                                    "check out"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "hotel_information",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "room number",
+                                "synonyms": [
+                                    "room",
+                                    "room name"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "phone",
+                                "synonyms": [
+                                    "my hotel phone number",
+                                    "phone numbers",
+                                    "telephone number",
+                                    "contact number",
+                                    "phone number"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "name",
+                                "synonyms": [
+                                    "my hotel name",
+                                    "hotel name"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "address",
+                                "synonyms": [
+                                    "my hotel address",
+                                    "hotel address"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "wifi_access_qa",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "wifi",
+                                "synonyms": [
+                                    "wi fi",
+                                    "wi-fi"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "property_special_events",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Special Events",
+                                "synonyms": [
+                                    "special event",
+                                    "any events",
+                                    "Property Special Events"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "deliverable_food_item",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cheese pizza",
+                                "synonyms": [
+                                    "cheeze pizza"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soda",
+                                "synonyms": [
+                                    "sprite",
+                                    "coke",
+                                    "pepsi",
+                                    "pop"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "pizza",
+                                "synonyms": [
+                                    "pizzas"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "burger",
+                                "synonyms": [
+                                    "burgers"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "coffee",
+                                "synonyms": [
+                                    "iced latte",
+                                    "latte",
+                                    "americano",
+                                    "cup of coffee"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tea",
+                                "synonyms": [
+                                    "hot tea",
+                                    "iced tea",
+                                    "cup of tea"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "wine",
+                                "synonyms": [
+                                    "bottle of wine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "soup",
+                                "synonyms": [
+                                    "bowl of soup"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "salad"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sandwich",
+                                "synonyms": [
+                                    "sandwiches"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "room_cleaning",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "housekeeping",
+                                "synonyms": [
+                                    "housekeepers",
+                                    "cleaners",
+                                    "maid",
+                                    "housekeeper",
+                                    "cleaner"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "make up room",
+                                "synonyms": [
+                                    "my room cleaned",
+                                    "clean my room",
+                                    "room cleaning"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "billing_information",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "billing",
+                                "synonyms": [
+                                    "bills",
+                                    "bill"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "in_room_service",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "food",
+                                "synonyms": [
+                                    "food ordering",
+                                    "in room dining",
+                                    "breakfasts",
+                                    "meal",
+                                    "meals",
+                                    "food and drinks"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "room service",
+                                "synonyms": [
+                                    "room service order",
+                                    "room service ordering",
+                                    "drinks",
+                                    "room dining"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "room_food_type",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "dinner",
+                                "synonyms": [
+                                    "dinners",
+                                    "supper"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "lunch",
+                                "synonyms": [
+                                    "lunches"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "breakfast",
+                                "synonyms": [
+                                    "breakfasts"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "amenity_information",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "amenities",
+                                "synonyms": [
+                                    "facility",
+                                    "the facility",
+                                    "property features",
+                                    "feature information",
+                                    "facility information",
+                                    "facilities",
+                                    "hotel facilities",
+                                    "amenity",
+                                    "hotel's amenities",
+                                    "hotel amenities"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "RoomDeliverableRequestIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1195911430589"
+                    },
+                    "slots": [
+                        {
+                            "name": "deliverable_room_item",
+                            "type": "deliverable_room_item",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1408409706824.1384337508675"
+                            }
+                        },
+                        {
+                            "name": "item_quantity",
+                            "type": "AMAZON.NUMBER",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1195911430589.948987657810"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "PropertyFeatureLocationIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "facility_type",
+                            "type": "facility_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.470418725325.596527362897"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "PropertyFeatureOperatingHoursIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "facility_type",
+                            "type": "facility_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.332667360907.524359939535"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "CheckoutRequestIntent",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1205707324219"
+                    },
+                    "slots": [
+                        {
+                            "name": "checkout",
+                            "type": "checkout",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "RoomCleaningRequestIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.1129489524687"
+                    },
+                    "slots": [
+                        {
+                            "name": "room_cleaning",
+                            "type": "room_cleaning",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "RoomCleaningCancelIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.779673067606"
+                    },
+                    "slots": [
+                        {
+                            "name": "room_cleaning",
+                            "type": "room_cleaning",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "InRoomFoodRequestIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": true,
+                    "prompts": {
+                        "confirmation": "Confirm.Intent.118785066354"
+                    },
+                    "slots": [
+                        {
+                            "name": "deliverable_food_item",
+                            "type": "deliverable_food_item",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1542783465191.1116516043670"
+                            }
+                        },
+                        {
+                            "name": "in_room_service",
+                            "type": "in_room_service",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "room_food_type",
+                            "type": "room_food_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "BillingInformationIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "billing_information",
+                            "type": "billing_information",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "GeneralPropertyFeaturesIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "facility_type",
+                            "type": "facility_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1196871259124.513417010331"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "HotelInformationIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "hotel_information",
+                            "type": "hotel_information",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.884159363671.1106861464745"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.470418725325.596527362897",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What hotel facility do you want to know the location for?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.332667360907.524359939535",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what hotel facility do you want to know the hours for"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1542783465191.1116516043670",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What food item would you like?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1408409706824.1384337508675",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what room item do you need"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "What room item would you like delivered"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.896190253524.443778084551",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "confirm"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1205707324219",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you want to check out?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.779673067606",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you want to cancel your room cleaning request?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1129489524687",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Would you like me to request house keeping to clean your room?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.118785066354",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "are you sure you would like to order {deliverable_food_item} ?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1195911430589.948987657810",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "How many items do you need?"
+                    }
+                ]
+            },
+            {
+                "id": "Confirm.Intent.1195911430589",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Are you sure you would like {item_quantity} {deliverable_room_item} sent to your room?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1196871259124.513417010331",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what hotel facility do you want to know about"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.884159363671.1106861464745",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "what hotel information are you looking for"
+                    }
+                ]
+            }
+        ],
+        "_nameFreeInteraction": {
+            "ingressPoints": [
+                {
+                    "type": "INTENT",
+                    "name": "GeneralPropertyFeaturesIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "PropertyFeatureLocationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "PropertyFeatureOperatingHoursIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomDeliverableRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "CheckoutRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "HotelInformationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "CheckoutTimeIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "WifiAccessQAIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "WifiAccessFreeIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomCleaningRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomCleaningCancelIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "BillingInformationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "InRoomFoodRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "GeneralRoomServiceIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "AmenityInformationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomTurnOverIntent"
+                }
+            ]
+        }
+    }
+}
