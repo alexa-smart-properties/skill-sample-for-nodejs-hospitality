@@ -13,6 +13,6 @@
     "aws-sdk": "^2.1162.0",
     "i18next": "^21.8.10",
     "i18next-sprintf-postprocessor": "^0.2.2",
-    "twilio": "^4.11.2"
+    "twilio": "^4.22.0"
   }
 }
