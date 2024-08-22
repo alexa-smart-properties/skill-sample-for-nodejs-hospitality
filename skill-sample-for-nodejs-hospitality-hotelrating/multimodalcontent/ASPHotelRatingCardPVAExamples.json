@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "5df2f651-ab7e-49b4-b090-b92b51df7324",
+		"name": "Alexa Smart Properties - Hotel Rating Card and Alert Examples",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": ""
+	},
+	"item": [
+		{
+			"name": "PVA - Room Service Rating",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"recipients\": [\n        {\n            \"type\": \"Unit\",\n            \"id\": \"{{UnitId}}\"\n        }\n    ],\n    \"notification\": {\n        \"variants\": [\n            {\n                \"type\": \"PersistentVisualAlert\",\n                \"content\": {\n                    \"variants\": [\n                        {\n                            \"type\": \"V0Template\",\n                            \"values\": [\n                                {\n                                    \"locale\": \"en-US\",\n                                    \"document\": {\n                                        \"type\": \"Link\",\n                                        \"src\": \"doc://alexa/apl/documents/enterprise/notifications/persistentvisualalert/optionListTemplate\" \n                                    },\n                                    \"datasources\": {\n                                        \"primaryText\": {\n                                            \"value\": \"How was your experience with our in-room dining services?\"\n                                        },\n                                        \"backgroundImage\": {\n                                            \"src\": \"https://d169t4j5aqp8az.cloudfront.net/foodorder.jpg\",\n                                            \"colorOverlay\": false\n                                        },\n                                        \"actionButton\": {\n                                            \"value\": \"Dismiss\",\n                                            \"actions\": [\n                                                {\n                                                    \"type\": \"DismissCardAction\"\n                                                }\n                                            ]\n                                        },\n                                        \"optionList\": [\n                                            {\n                                                \"iconName\": \"ic_like\",\n                                                \"actions\": [\n                                                    {\n                                                        \"type\": \"SkillConnectionAction\",\n                                                        \"connectionUri\": \"connection://{{SkillId}}.rating/1?provider={{SkillId}}\",\n                                                        \"input\": {\n                                                            \"rating\": 4\n                                                        }\n                                                    },                                                            \n                                                    {\n                                                        \"type\": \"DismissCardAction\"\n                                                    }\n                                                ]\n                                            },\n                                            {\n                                                \"iconName\": \"ic_dislike\",\n                                                \"actions\": [\n                                                    {\n                                                        \"type\": \"SkillConnectionAction\",\n                                                        \"connectionUri\": \"connection://{{SkillId}}.rating/1?provider={{SkillId}}\",\n                                                        \"input\": {\n                                                            \"rating\": 1\n                                                        }\n                                                    },                                                            \n                                                    {\n                                                        \"type\": \"DismissCardAction\"\n                                                    }\n                                                ]\n                                            }\n                                        ]\n                                    }\n                                }\n                            ]\n                        }\n                    ]\n                },\n                \"deliveryPreferences\": {\n                    \"indicator\": {\n                        \"sound\": {\n                            \"type\": \"CHIME\"\n                        }\n                    }\n                }\n                \n            }\n        ]\n        \n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Host}}/v3/notifications",
+					"protocol": "https",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"v3",
+						"notifications"
+					]
+				},
+				"description": "Send a Pinned Card into a unit\n---\n\nA Pinned Card is known as a Persistent Visual Alerts. Persistent visual alerts are only for devices with screens. A persistent visual alert is a notification that's displayed on the screen until it expires or the guest or resident dismisses it.\n\n\n\n**Note:** `notification.variants[].type` must be of type `PersistentVisualAlert ` to send a Pinned Card.\n\n---\n[see Online Doc](https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/asp-in-senior-living-notifications-api.html#send-notifications)"
+			},
+			"response": []
+		},
+		{
+			"name": "Proactive Suggestion - Hotel Rating",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suggestion\": {\n        \"variants\": [\n            {\n                \"placement\": {\n                    \"channel\": \"HOME\"\n                },\n                \"content\": {\n                    \"values\": [\n                        {\n                            \"locale\": \"en-US\",\n                            \"document\": {\n                                \"type\": \"Link\",\n                                \"src\": \"doc://alexa/apl/documents/home/cards/textWrapping\"\n                            },\n                            \"datasources\": {\n                                \"displayText\": {\n                                    \"action\": {\n                                        \"type\": \"SkillConnection\",\n                                        \"uri\": \"connection://AMAZON.ColdLaunch/1?provider={{SkillId}}\",\n                                        \"input\": {}\n                                    },\n                                    \"headerText\": \" \",\n                                    \"primaryText\": \"Rate your stay experience\",\n                                    \"hintText\": \"Try, \\\"Alexa, rate my stay.\\\"\"\n                                },\n                                \"background\": {\n                                    \"backgroundImageSource\": \"https://d169t4j5aqp8az.cloudfront.net/hotelrating.jpg\"\n                                },\n                                \"attribution\": {\n                                }\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n    \"targeting\": {\n        \"units\": {\n            \"items\": [\n                \"{{UnitId}}\"\n            ]\n        }\n    },\n    \"scheduling\": {\n        \"activationWindow\": {\n            \"start\": \"{{StartDateTime}}\",\n            \"end\": \"{{EndDateTime}}\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Host}}/v1/proactive/campaigns",
+					"protocol": "https",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"v1",
+						"proactive",
+						"campaigns"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

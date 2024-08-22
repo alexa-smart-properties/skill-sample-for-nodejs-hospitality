@@ -1,0 +1,12 @@
+{
+    "text": {
+        "primaryText": "Thank you for the rating!",
+        "secondaryText": "Property staff will be in contact to address your issues."
+    },
+    "assets": {
+        "logoURL":
+            "https://d169t4j5aqp8az.cloudfront.net/HotelLogo_White.png",
+        "backgroundURL":
+            "https://d169t4j5aqp8az.cloudfront.net/BadReview.jpg"
+    }
+}

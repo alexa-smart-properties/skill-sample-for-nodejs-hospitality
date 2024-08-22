@@ -1,0 +1,57 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "rate my stay",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "RatingIntent",
+                  "slots": [
+                      {
+                          "name": "rating",
+                          "type": "AMAZON.NUMBER"
+                      }
+                  ],
+                  "samples": [
+                      "I would give it {rating} star",
+                      "I would give it {rating} stars",
+                      "I loved the stay so {rating} stars",
+                      "I loved the stay so {rating} star",
+                      "I do not like the stay so {rating} stars",
+                      "I do not like the stay so {rating} star",
+                      "my rating would be {rating} stars",
+                      "my rating would be {rating} star",
+                      "{rating} stars",
+                      "{rating} star",
+                      "my rating would be {rating}",
+                      "i do not like the stay so {rating}",
+                      "I loved the say so {rating}",
+                      "I would give it {rating}",
+                      "I would rate as {rating}",
+                      "{rating}"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.FallbackIntent",
+                  "samples": []
+              }
+          ],
+          "types": []
+      }
+  }
+}

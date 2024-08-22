@@ -1,0 +1,148 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Rate my stay",
+          "examplePhrases": [
+            "Alexa, open rate my stay",
+            "Alexa, start rate my stay",
+            "help"
+          ],
+          "keywords": [
+            "hotel",
+            "satisfaction",
+            "rating",
+            "review"
+          ],
+          "name": "Rate my stay",
+          "description": "Rate my stay",
+          "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
+          "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "{\"ask_dist_username\":\"\",\"ask_dist_password\":\"\",\"ask_dist_testing_instructions\":\"Sample Testing Instructions.\"}",
+      "category": "BUSINESS_AND_FINANCE",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "tasks": [
+          {
+            "name": "rating",
+            "version": "1"
+          }
+        ],
+
+        "interfaces": [
+          {
+            "supportedViewports": [
+              {
+                "minHeight": 540,
+                "mode": "TV",
+                "shape": "RECTANGLE",
+                "maxHeight": 540,
+                "minWidth": 960,
+                "maxWidth": 960
+              },
+              {
+                "minHeight": 100,
+                "mode": "HUB",
+                "shape": "ROUND",
+                "maxHeight": 599,
+                "minWidth": 100,
+                "maxWidth": 599
+              },
+              {
+                "minHeight": 600,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 959,
+                "minWidth": 960,
+                "maxWidth": 1279
+              },
+              {
+                "minHeight": 600,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 1279,
+                "minWidth": 1280,
+                "maxWidth": 1920
+              },
+              {
+                "minHeight": 100,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 599,
+                "minWidth": 960,
+                "maxWidth": 1279
+              },
+              {
+                "minHeight": 960,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 1279,
+                "minWidth": 1920,
+                "maxWidth": 2560
+              },
+              {
+                "minHeight": 1920,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 2560,
+                "minWidth": 960,
+                "maxWidth": 1279
+              },
+              {
+                "minHeight": 320,
+                "mode": "MOBILE",
+                "shape": "RECTANGLE",
+                "maxHeight": 1920,
+                "minWidth": 600,
+                "maxWidth": 959
+              },
+              {
+                "minHeight": 320,
+                "mode": "MOBILE",
+                "shape": "RECTANGLE",
+                "maxHeight": 1920,
+                "minWidth": 960,
+                "maxWidth": 1279
+              },
+              {
+                "minHeight": 320,
+                "mode": "MOBILE",
+                "shape": "RECTANGLE",
+                "maxHeight": 1920,
+                "minWidth": 1280,
+                "maxWidth": 1920
+              }
+            ],
+            "type": "ALEXA_PRESENTATION_APL"
+          }
+        ],
+        "locales": {}
+      }
+    },
+    "manifestVersion": "1.0",
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "shoppingKit": {
+        "isShoppingActionsEnabled": false,
+        "isAmazonAssociatesOnAlexaEnabled": false
+      },
+      "usesPersonalInfo": false
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+    "data": {
+        "rating": 0,
+        "backgroundURL": "https://d169t4j5aqp8az.cloudfront.net/MainMenuBackground.png",
+        "logoURL": "https://d169t4j5aqp8az.cloudfront.net/HotelLogo_White.png",
+        "ratingQuestion": "How would you rate your experience at this hotel?",
+        "oneStarRatingText": "Very unsatisfied",
+        "fiveStarRatingText": "Very satisfied",
+        "hintText": "Tap the star to leave a rating, or say 'Alexa, five stars'"    
+    }
+}

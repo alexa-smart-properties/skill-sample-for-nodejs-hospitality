@@ -1,0 +1,29 @@
+{
+    "type": "APL",
+    "version": "1.8",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.5.0"
+        }
+    ],
+    "mainTemplate": {
+        "parameters": ["text", "assets"],
+        "item": [
+            {
+                "type": "AlexaHeadline",
+                "id": "GuestWelcome",
+                "primaryText": "${text.primaryText}",
+                "secondaryText": "${text.secondaryText}",
+                "headerBackButton": false,
+                "headerAttributionImage": "${assets.logoURL}",
+                "headerAttributionPrimacy": true,
+                "footerHintText": "${text.hintText}",
+                "backgroundImageSource": "${assets.backgroundURL}",
+                "backgroundColorOverlay": true
+            }
+        ]
+    }
+}

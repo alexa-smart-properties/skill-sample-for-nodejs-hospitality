@@ -1,0 +1,12 @@
+{
+    "text": {
+        "primaryText": "Thank you for the rating!",
+        "secondaryText": "We are glad you are enjoying your stay."
+    },
+    "assets": {
+        "logoURL":
+            "https://d169t4j5aqp8az.cloudfront.net/HotelLogo_White.png",
+        "backgroundURL":
+            "https://d169t4j5aqp8az.cloudfront.net/GoodReview.jpg"
+    }
+}

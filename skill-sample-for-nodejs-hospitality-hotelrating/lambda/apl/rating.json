@@ -1,0 +1,178 @@
+{
+    "type": "APL",
+    "version": "1.4",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "settings": {},
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "when": "${(@viewportProfile == @hubLandscapeMedium)}",
+            "dimensions": {
+                "RatingQuestionFontSize": "35",
+                "RatingDescriptionFontSize": "25",
+                "RatingDescriptionWidth": "45%",
+                "RatingStarScale": 5,
+                "HintTextFontSize": "25"
+            }
+        },
+        {
+            "when": "${(@viewportProfile == @hubLandscapeXLarge)}",
+            "dimensions": {
+                "RatingQuestionFontSize": "55",
+                "RatingDescriptionFontSize": "45",
+                "RatingDescriptionWidth": "45%",
+                "RatingStarScale": 8,
+                "HintTextFontSize": "40"
+            }
+        },
+        {
+            "when": "${(@viewportProfile == @hubLandscapeSmall)}",
+            "dimensions": {
+                "RatingQuestionFontSize": "35",
+                "RatingDescriptionFontSize": "25",
+                "RatingDescriptionWidth": "45%",
+                "RatingStarScale": 4,
+                "HintTextFontSize": "25"
+            }
+        }
+    ],
+    "styles": {},
+    "onMount": [],
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "alignItems": "center",
+                "justifyContent": "start",
+                "type": "Container",
+                "height": "100vh",
+                "width": "100vw",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.data.backgroundURL}"
+                    },
+                    {
+                        "source": "${payload.data.logoURL}",
+                        "align": "top",
+                        "type": "Image",
+                        "disabled": true,
+                        "height": "25%",
+                        "width": "100%",
+                        "paddingTop": "40"
+                    },
+                    {
+                        "textAlign": "center",
+                        "textAlignVertical": "center",
+                        "maxLines": 1,
+                        "text": "${payload.data.ratingQuestion}",
+                        "fontSize": "@RatingQuestionFontSize",
+                        "type": "Text",
+                        "height": "20%"
+                    },
+                    {
+                        "onUp": [
+                            {
+                                "type": "SetValue",
+                                "property": "ratingNumber",
+                                "value": "${Math.ceil(event.component.x/event.component.width*5)}"
+                            },
+                            {
+                                "type": "SendEvent",
+                                "sequencer": "sendRating",
+                                "arguments": [
+                                    "rating",
+                                    "${ratingNumber}"
+                                ]
+                            }
+                        ],
+                        "type": "TouchWrapper",
+                        "id": "hotelRating",
+                        "bind": [
+                            {
+                                "name": "ratingNumber",
+                                "value": "${payload.data.rating}"
+                            }
+                        ],
+                        "transform": [
+                            {
+                                "scaleX": "@RatingStarScale"
+                            },
+                            {
+                                "scaleY": "@RatingStarScale"
+                            }
+                        ],
+                        "top": "80",
+                        "item": [
+                            {
+                                "type": "AlexaRating",
+                                "id": "AlexahotelRating",
+                                "ratingNumber": "${ratingNumber}"
+                            }
+                        ]
+                    },
+                    {
+                        "alignItems": "end",
+                        "justifyContent": "spaceEvenly",
+                        "direction": "row",
+                        "alignSelf": "center",
+                        "type": "Container",
+                        "height": "30%",
+                        "width": "74%",
+                        "items": [
+                            {
+                                "type": "Text"
+                            },
+                            {
+                                "text": "${payload.data.oneStarRatingText}",
+                                "color": "#FFFFFF",
+                                "fontSize": "@RatingDescriptionFontSize",
+                                "textAlign": "right",
+                                "type": "Text"
+                            },
+                            {
+                                "textAlign": "center",
+                                "type": "Text",
+                                "width": "@RatingDescriptionWidth"
+                            },
+                            {
+                                "text": "${payload.data.fiveStarRatingText}",
+                                "color": "#FFFFFF",
+                                "fontSize": "@RatingDescriptionFontSize",
+                                "textAlign": "left",
+                                "type": "Text"
+                            },
+                            {
+                                "type": "Text"
+                            }
+                        ]
+                    },
+                    {
+                        "textAlign": "center",
+                        "textAlignVertical": "center",
+                        "fontStyle": "italic",
+                        "maxLines": 1,
+                        "text": "${payload.data.hintText}",
+                        "fontSize": "@HintTextFontSize",
+                        "type": "Text",
+                        "height": "30%"
+                    }
+                ]
+            }
+        ]
+    }
+}
