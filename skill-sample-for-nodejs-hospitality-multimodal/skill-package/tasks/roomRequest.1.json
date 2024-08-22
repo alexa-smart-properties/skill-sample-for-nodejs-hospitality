@@ -1,0 +1,99 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Request in room items",
+        "version": "1",
+        "x-amzn-alexa-access-scope": "public"
+    },
+    "tags": [{
+        "name": "Request in room items"
+    }],
+    "paths": {
+        "/roomRequest": {
+            "summary": "Request in room items",
+            "description": "To request items to be sent to rooms in the property.  This task's inputs are all optional, and are not used when launched from Rotating cards.  when no input are specified, just launch the page and ask customer for input",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "examples": {
+                                "oneItemType": {
+                                    "description": "request one item of the room item types",
+                                    "value": {
+                                        "item_type": "umbrella",
+                                        "quantity": 1
+                                    }
+                                },
+                                "onlyItemType": {
+                                    "description": "request a particular item type (skill will then ask for quantity)",
+                                    "value": {
+                                        "item_type": "towel"
+                                    }
+                                },
+                                "noInput": {
+                                    "description": "just launch room item request experience, skill will solicit input for type and quantity",
+                                    "value": {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "When the task finishes successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessfulResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "When the given parameters fail validations"
+                    },
+                    "500": {
+                        "description": "When the task execution fails"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Input": {
+                "type": "object",
+                "properties": {
+                    "item_type": {
+                        "type": "string",
+                        "x-amzn-display-details": {
+                            "en-US": {
+                                "name": "item_type",
+                                "description": "The type of room item to request"
+                            }
+                        }
+                    },
+                    "quantity": {
+                        "type": "number",
+                        "minimum": 1,
+                        "maximum": 10,
+                        "x-amzn-display-details": {
+                            "en-US": {
+                                "name": "quantity",
+                                "description": "The number of room item to request"
+                            }
+                        }
+                    }
+                }
+            },
+            "SuccessfulResponse": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "pageData": {
+        "type": "object",
+        "properties": {
+            "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+            "headerPrimaryText": "Welcome, guest!",
+            "headerSecondaryText": "Room 808",
+            "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+            "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",    
+            "textContent": "Default content to be replaced.",
+            "alexa_hints": [
+                "what's the wi-fi password?",
+                "call the front desk.",
+                "tell me about the restaurant.",
+                "when does the bar open?",
+                "I need more towels.",
+                "set alarm for 6 AM.",
+                "I want to checkout."
+            ],
+            "skillResponseOutput": "Default skill response speech to be replaced",
+            "actionButtonDisplay": "none",
+            "videoSource": "https://d3qvi2egjrw5ks.cloudfront.net/MaveriWelcome.mp4",
+            "videoRepeatCount": 0,
+            "videoAudioTrack": "foreground",
+            "playControlDisplay": "normal",
+            "videoOnEnd":
+            [
+                {
+                    "type": "SendEvent",
+                    "arguments": [
+                        "mainmenu"
+                    ],
+                    "flags": {
+                        "interactionMode": "STANDARD"
+                    }
+                }
+            ],
+            "onMount": [
+                {
+                    "type": "Sequential",
+                    "commands": [
+                        {
+                            "type": "SpeakItem",
+                            "componentId": "videoSpokenText"
+                        },
+                        {
+                            "type": "SetValue",
+                            "componentId": "videoSpokenText",
+                            "property": "display",
+                            "value": "none"
+                        },
+                        {
+                            "type": "SetValue",
+                            "componentId": "VIDEO_PLAYER",
+                            "property": "display",
+                            "value": "normal"
+                        },
+                        {
+                            "type": "ControlMedia",
+                            "componentId": "VIDEO_PLAYER",
+                            "command": "play"
+                        }
+                    ]
+                }
+            ]        
+        },
+        "transformers": [ {
+            "inputPath": "skillResponseOutput",
+            "outputName": "skillSpeechOutput",
+            "transformer": "ssmlToSpeech"
+        } ]
+    }
+}

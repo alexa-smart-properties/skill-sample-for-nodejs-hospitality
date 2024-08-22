@@ -1,0 +1,20 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "confirmationTitleText": "Do you want me to #action?",
+        "yesButtonText": "Yes",
+        "noButtonText": "No",
+        "alexa_hints": [
+            "Yes",
+            "No",
+            "Yes",
+            "No",
+            "Yes",
+            "No"
+        ]    
+    }
+}

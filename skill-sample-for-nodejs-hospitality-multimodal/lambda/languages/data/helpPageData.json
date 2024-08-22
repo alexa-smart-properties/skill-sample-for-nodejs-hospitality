@@ -1,0 +1,19 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "textContent": "<b>ALEXA IS YOUR VOICE CONCIERGE AT MAVERI, TRY:</b><br><br><i>Alexa, I've Arrived.</i><br><br><i>Alexa, where is the business center?</i><br><br><i>Alexa, how do I connect to the WiFi?</i><br><br><i>Alexa, what time is check out?</i><br><br><i>Alexa, play music.</i><br><br><i>Alexa, tell me about Maveri Rewards.</i><br><br><i>Alexa, can I get room service?</i><br><br><i>Alexa, can I get a toothbrush?</i><br><br><i>Alexa, what amenities are available?</i><br><br><i>Alexa, I want to order dinner.</i><br><br><i>Alexa, what time is the gym open?</i><br><br><i>Alexa, call front desk.</i><br><br><i>Alexa, request house keeping.</i><br><br><i>Alexa, how much is my bill?</i><br><br><i>Alexa, what time is check out?</i><br><br>",
+        "alexa_hints": [
+            "what's the wi-fi password?",
+            "call the front desk.",
+            "tell me about the restaurant.",
+            "when does the bar open?",
+            "I need more towels.",
+            "set alarm for 6 AM.",
+            "I want to checkout."
+        ]
+    }
+}

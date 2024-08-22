@@ -1,0 +1,144 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "alexa_hints": [
+            "what's the wi-fi password?",
+            "call the front desk.",
+            "tell me about the restaurant.",
+            "when does the bar open?",
+            "I need more towels.",
+            "set alarm for 6 AM.",
+            "I want to checkout."
+        ],
+        "event": {
+            "roomServiceAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["GeneralRoomServiceIntent"]
+                }
+            ],
+            "amenityMainAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["homeAmenity", "restaurant"]
+                }
+            ],
+            "roomItemRequestAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["RoomDeliverableRequestIntent"]
+                }
+            ],
+            "wifiInfoAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["WifiAccessFreeIntent"]
+                }
+            ],
+            "houseKeepingAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["RoomCleaningRequestIntent"]
+                }
+            ],
+            "phoneDirectoryAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["PBXCallRequestIntentHandler"]
+                }
+            ],
+            "checkOutAction": [
+                {
+                    "type": "SendEvent",
+                    "arguments": ["CheckoutRequestIntent"]
+                }
+            ]
+        },
+        "cardLayoutInSequence": {
+            "headerTitle": "Displaying the Card component in a horizontal Sequence",
+            "itemsToDisplay": [
+                {
+                    "headerText": "Become a member",
+                    "primaryText": "Maveri Rewards",
+                    "secondaryText": "Sign up now!",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/reward2.jpg",
+                    "imageProgressBarPercentage": 0,
+                    "ratingNumber": "",
+                    "tertiaryText": "5000 bonus points!",
+                    "id": "loyaltyprogramcard"
+                },
+                {
+                    "primaryText": "Grand Canyon Day Tour",
+                    "secondaryText": "",
+                    "imageCaption": "true",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/tour3.jpg",
+                    "ratingNumber": "5",
+                    "secondaryIconName": "",
+                    "imageProgressBarPercentage": 1,
+                    "id": "tourcard"
+                },
+                {
+                    "headerText": "Gourmet Grove Bistro",
+                    "facility_type": "restaurant",
+                    "primaryText": "Guest Special",
+                    "secondaryText": "(702) 414-1000",
+                    "secondaryIconName": "ic_call",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/restaurant.jpg",
+                    "imageProgressBarPercentage": 2,
+                    "ratingNumber": "",
+                    "tertiaryText": "$50 credit per night",
+                    "id": "restaurantcard"
+                },
+                {
+                    "primaryText": "Happy Hour",
+                    "facility_type": "happyhour",
+                    "secondaryText": "at Horizon Haven Bar",
+                    "imageCaption": "true",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/HappyHour2.jpg",
+                    "ratingNumber": "",
+                    "secondaryIconName": "",
+                    "imageProgressBarPercentage": 3,
+                    "tertiaryText": "4 PM - 6 PM daily",
+                    "id": "barcard"
+                },
+                {
+                    "primaryText": "Sphere Experience",
+                    "secondaryText": "",
+                    "imageCaption": "true",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/sphere.jpg",
+                    "ratingNumber": "5",
+                    "secondaryIconName": "",
+                    "imageProgressBarPercentage": 4,
+                    "id": "eventcard"
+                },
+                {
+                    "primaryText": "Pure Bliss",
+                    "facility_type": "spa",
+                    "secondaryText": "at Sunrise Spa",
+                    "imageCaption": "true",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Spa2.jpg",
+                    "ratingNumber": "5",
+                    "secondaryIconName": "",
+                    "imageProgressBarPercentage": 5,
+                    "id": "spacard"
+                },
+                {
+                    "headerText": "Fitness Center",
+                    "facility_type": "gym",
+                    "primaryText": "Hours",
+                    "secondaryText": "5:30 AM - 10:00 PM",
+                    "tertiaryText": "",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Gym2.jpg",
+                    "secondaryIconName": "",
+                    "tertiaryIconName": "",
+                    "imageProgressBarPercentage": 6,
+                    "id": "gymcard"
+                }
+            ]
+        }
+    }
+}

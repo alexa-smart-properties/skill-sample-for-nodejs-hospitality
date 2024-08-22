@@ -1,0 +1,120 @@
+{
+  "pageData": {
+    "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+    "headerPrimaryText": "Welcome, guest!",
+    "headerSecondaryText": "Room 808",
+    "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+    "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+    "alexa_hints": [
+      "Send me one towel. ",
+      "Can I have a tooth brush?",
+      "I need more blankets.",
+      "Please send me more toilet paper.",
+      "Can I get two more pillows delivered?",
+      "Submit my request."
+    ],
+    "defaultAmounts": [],
+    "items": [
+      {
+        "content": "Bath robe",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/BathRobe.jpg",
+        "propertyName": "bath_robe_count"
+      },
+      {
+        "content": "Bath slippers",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/BathSlippers.jpg",
+        "propertyName": "bath_slippers_count"
+      },
+      {
+        "content": "Blanket",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Blanket.jpg",
+        "propertyName": "blanket_count"
+      },
+      {
+        "content": "Comb",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Comb.jpg",
+        "propertyName": "comb_count"
+      },
+      {
+        "content": "Conditioner",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/ConditionerShampoo.jpg",
+        "propertyName": "conditioner_count"
+      },
+      {
+        "content": "Duvet covers",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/DuvetCovers.jpg",
+        "propertyName": "duvet_covers_count"
+      },
+      {
+        "content": "Hair dryer",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/HairDryer.jpg",
+        "propertyName": "hair_dryer_count"
+      },
+      {
+        "content": "Iron",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Iron.jpg",
+        "propertyName": "iron_count"
+      },
+      {
+        "content": "Ironing board",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/IroningBoard.jpg",
+        "propertyName": "ironing_board_count"
+      },
+      {
+        "content": "Mouth wash",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Mouthwash.jpg",
+        "propertyName": "mouth_wash_count"
+      },
+      {
+        "content": "Pillow",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Pillow.jpg",
+        "propertyName": "pillow_count"
+      },
+      {
+        "content": "Razor",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Razor.jpg",
+        "propertyName": "razor_count"
+      },
+      {
+        "content": "Shampoo",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/ConditionerShampoo.jpg",
+        "propertyName": "shampoo_count"
+      },
+      {
+        "content": "Sheets",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Sheets.jpg",
+        "propertyName": "sheets_count"
+      },
+      {
+        "content": "Soap",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Soap.jpg",
+        "propertyName": "soap_count"
+      },
+      {
+        "content": "Toilet Paper",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/ToiletPaper.jpg",
+        "propertyName": "toilet_paper_count"
+      },
+      {
+        "content": "Tooth brush",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Toothbrush.jpg",
+        "propertyName": "tooth_brush_count"
+      },
+      {
+        "content": "Tooth paste",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Toothpaste.jpg",
+        "propertyName": "tooth_paste_count"
+      },
+      {
+        "content": "Towel",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Towels.jpg",
+        "propertyName": "towel_count"
+      },
+      {
+        "content": "Umbrella",
+        "image": "https://d3qvi2egjrw5ks.cloudfront.net/Umbrella.jpg",
+        "propertyName": "umbrella_count"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Facility Information",
+        "version": "1",
+        "x-amzn-alexa-access-scope": "public"
+    },
+    "tags": [{
+        "name": "Facility Information"
+    }],
+    "paths": {
+        "/facilityInfo": {
+            "summary": "Facility information",
+            "description": "To get information about a facility type of the property",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "examples": {
+                                "restaurantHours": {
+                                    "description": "Example input for getting restaurant's hours",
+                                    "value": {
+                                        "facility_type": "restaurant",
+                                        "information_type": "hours"
+                                    }
+                                },
+                                "gymLocation": {
+                                    "description": "Example input for getting the location of the gym",
+                                    "value": {
+                                        "facility_type": "gym",
+                                        "information_type": "location"
+                                    }
+                                },
+                                "barDescriptioin": {
+                                    "description": "Example input for getting description about the bar",
+                                    "value": {
+                                        "facility_type": "bar",
+                                        "information_type": "description"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "When the task finishes successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessfulResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "When the given parameters fail validations"
+                    },
+                    "500": {
+                        "description": "When the task execution fails"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Input": {
+                "type": "object",
+                "properties": {
+                    "facility_type": {
+                        "type": "string",
+                        "x-amzn-display-details": {
+                            "en-US": {
+                                "name": "facility_type",
+                                "description": "The type of facility the information is about"
+                            }
+                        }
+                    },
+                    "information_type": {
+                        "type": "string",
+                        "x-amzn-display-details": {
+                            "en-US": {
+                                "name": "information_type",
+                                "description": "The type of information about the facility type to be returned"
+                            }
+                        }
+                    }
+                }
+            },
+            "SuccessfulResponse": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    }
+}

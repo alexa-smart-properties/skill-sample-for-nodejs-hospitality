@@ -1,0 +1,65 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Hotel Home Menu",
+        "version": "1",
+        "x-amzn-alexa-access-scope": "public"
+    },
+    "tags": [{
+        "name": "Hotel Home Menu"
+    }],
+    "paths": {
+        "/homeMenu": {
+            "summary": "Hotel Home Menu",
+            "description": "To display the Hotel Home Menu page.  This task has no input.",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "examples": {
+                                "noInput": {
+                                    "description": "just launch the home menu page",
+                                    "value": {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "When the task finishes successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessfulResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "When the given parameters fail validations"
+                    },
+                    "500": {
+                        "description": "When the task execution fails"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Input": {
+                "type": "object",
+                "properties": {}
+            },
+            "SuccessfulResponse": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    }
+}

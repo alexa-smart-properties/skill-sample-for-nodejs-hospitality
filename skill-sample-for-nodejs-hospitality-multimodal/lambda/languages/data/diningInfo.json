@@ -1,0 +1,43 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "items": [
+            {
+                "category": "Breakfast",
+                "content": "<b><u>Signature Breakfast</u></b><br><br><b>Light Start</b> $30<br><i>Yogurt & berries with granola and a morning glory muffin<br>Freshly brewed coffee, or specialty teas and fruit juice</i><br><br><b>Full American Breakfast</b> $34<br><i>Eggs any style, herbed potatoes, bacon, sausage or chicken apple sausage, toast<br>Freshly brewed coffee, or specialty teas and fruit juices<br>Add steak +$13</i><br><br><b><u>À LA CARTE</u></b><br><br><b>House-Made Pastries</b> $8 each<br><i>Choice of butter croissant, Danish</i><br><br><b>Yogurt & Berries</b> $16<br><i>Yogurt, macerated berries, granola, honey, mint</i><br><br><b>Steel Cut Oatmeal</b> $16<br><i>Seasonal berries, toasted coconut, flax seeds<i><br><br><b>Salmon Lox</b> $26<br><i>House cured lox, tomato, crispy bagel, everything salt</i><br><br><b>Waffles</b> $20<br><i>Seasonal Fruit, Maple Syrup</i><br><br><b>Vegan Tartine</b> $23<br><i>Tumeric scrambled tofu, cherry tomatoes, roasted mushrooms, multigrain bread</i><br><br><b>Avocado Toast</b> $22<br><i>Sourdough, sunny side egg, tomato, crunchy seed<br>Add Salmon Lox +$9</i><br><br><b>Classic French Omelet</b> $21<br><i>Fines herbes, comté cheese, herbed potatoes<br>Add Jambon +$3</i><br><br><b>Olympic Breakfast</b> $26<br><i>Eggs any style, herbed breakfast potatoes, bacon, choice of sausage or chicken apple sausage, toast<br>Add bistro steak +$13</i><br><br><b>Eggs Benedict</b> $26<br><i>English muffin, jambon, hollandaise, breakfast potatoes<br>Substitute Crab +$15</i></br>",
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/breakfast.jpg"
+            },
+            {
+                "category": "Lunch",
+                "content": "<b><u>Lunch | All Day menu</u></b><br><br><b>Shuckers Clam Chowder</b> $16<br><br><b>Market Green Salad</b> $18<br><i>Greens, quinoa, cucumber, tomato, vinaigrette</i><br><br><b>Sweet Gem Caesar</b> $19<br><i>Parmesan cheese, anchovies, house-made dressing<br>Add chicken +$10 | Add shrimp +$12 | Add salmon lox +$12</i><br><br><b>Naan & Dips</b> $19<br><i>Tzatziki, hummus, babaganoush</i><br><br><b>Smokey Fries</b> $17<br><i>Chimichurri aioli & fresh herbs</i><br><br><b>Chicken Fingers & Fries</b> $24<br><i>Plus sauce, ketchup</i><br><br><b>California Chicken Sandwich</b> $25<br><i>Smoked bacon, Beecher's cheese, arugula, spicy aioli & fries</i><br><br><b>The Great Burger</b> $30<br><i>Beecher's cheese, bacon jalapeño jam, lettuce, tomato onion, pickles, secret sauce, fries</i><br><br><b>Ricotta Ravioli</b> $30<br><i>Sautéed spinach, cherry tomatoes, roasted tomato sauce, buratta, basil pesto</i><br><br><b>Steak Frites</b> $41<br><i>10oz dry-aged flatiron steak, frites, rose aioli</i><br>",
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/lunch.jpg"
+            },
+            {
+                "category": "Dinner",
+                "content": "<b><u>Dinner | Entrée</u></b><br><br><b>House-made Nori Sourdough</b> $9<br><i>Artisanal butter, nori salt</i><br><br><b>PNW Crudo</b> $23<br><i>Insipred by the season</i><br><br><b>Dungeness Crab Salad</b> $28<br><i>Seasonal greens, vinaigrette</i><br><br><b>The Great Beef Tartare</b> $27<br><i>House-made cracker, brandy<i><br><br><b>Catch of the Day</b> $45<br><i>Vegetables, garlic herb roasted potatoes, warm beurre noisette vinaigrette</i><br><br><b>Roasted Chicken Supreme</b> $38<br><i>Crispy garlic potatoes, buttered asparagus, mustard jus</i><br><br><b>Pommes Aligot</b> $15<br><i>Comte Cheese, butter, chives</i><br><br><b>Rapini</b> $14<br><i>Garlic, Calabrian chilli</i><br>",
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/dinner.jpg"
+            },
+            {
+                "category": "Dessert",
+                "content": "<b><u>Sweet Endings</u></b><br><br><b>New York Cheesecake</b> $14<br><br><b>Strawberry Compote</b> $14<br><br><b>Warm Molten Chocolate Lava Cake</b> $14<br><br><b>Crème brûlée with Berries</b> $13<br><br><b>Seasonal Icecreams & Sorbets</b> $12<br><br><b>Limoncello + Chocolate Tartlet</b> $14<br>",
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/dessert.jpg"
+            },
+            {
+                "category": "Beverages",
+                "content": "<b><u>Cocktails</u></b><br><br><b>Yule Log</b> $17<br><i>Gray whale gin, black raspberry chambord, disaronno, lemon</i><br><br><b>Holiday Away</b> $17<br><i>Blended scotch, lemon, galliano, absinthe, grenadine</i><br><br><b>Peppermint Cookie</b> $17<br><i>White rum, frangellico, baileys cream, house peppermint syrup</i><br><br><b>Winter's Kiss</b> $17<br><i>Hennessy, brennivin aquavit, rabarbaro, absinthe rinse</i><br><br><b>Sleigh Bellini</b> $17<br><i>Mionetto brut prosecco, canton ginger, tart cranberry</i><br><br><b>Drunken Chestnut</b> $17<br><i>Chuckanut bay bourbon, chestnut syrup, ramazzotti</i><br><br><b><u>Red Wine (cup | bottle)</u></b><br><br><b>Dashwood Pino Noir</b> $17 | $54<br><i>New Zealand 2018</i><br><br><b>Watermill, Syrah</b> $17 | $54<br><i>Walla Walla, WA, 2020</i><br><br><b>Reininger, Cabernet Sauvingnon</b> $23 | $89<br><i>Walla Walla, WA, 2020 - 23/89</i><br><br><b>Blackboard Merlot</b> $16 | $52<br><i>Columbia Valley, WA, 2019</i><br><br><b><u>White Wine (cup | bottle)</u></b><br><br><b>Brown Heritage Chardonnay</b> $14 | $36 <br><i>Walla Walla, WA 2018</i><br><br><b>Jaine Sauvignon Blanc</b> $15 | $48<br><i>Columbia Valley 2020</i><br><br><b>Novelty Hills Roussanne</b> $16 | $52<br><i>Columbia Valley, WA 2021</i><br><br><b>Elk Cove Pinot Gris</b> $14 | $48<br><i>Willamette Valley, OR 2022 - 14/48</i><br><br><b><u>Beer + Cider</u></b><br><br><b>Georgetown Roger's Pilsner</b> $8<br><i>Georgetown, Seattle 4.9 abv</i><br><br><b>Fremont Sky Kraken - Hazy India Pale Ale</b> $8<br><i>Fremont, Seattle, 5.5 abv</i><br><br><b>Rogers Pilsner</b> $8<br><i>Georgetown, Seattle, 4.9 abv</i><br><br><b>Seattle Semim Sweet Cider</b> $9<br><i>Seattle Cider Co, Seattle 6.5 abv</i><br><br><b>Semi-sweet Local Legend Cider</b> $9<br><i>Schilling Cider Co., Seattle, 5.2 abv</i><br><br><b>Georgetown Bodhizafa IPA</b> $8<br><i>Georgetown, Seattle, 6.9abv</i><br><br><b><u>Misc</u></b><br><br><b>Assorted soda</b> $4<br><br><b>Coffee</b> $3<br><br><b>Tea</b> $3<br>",
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/beverage.jpg"
+            }
+        ],
+        "alexa_hints": [
+            "To order, please call hotel services.",
+            "To order, please call hotel services.",
+            "To order, please call hotel services.",
+            "To order, please call hotel services.",
+            "To order, please call hotel services."
+        ]
+    }
+}

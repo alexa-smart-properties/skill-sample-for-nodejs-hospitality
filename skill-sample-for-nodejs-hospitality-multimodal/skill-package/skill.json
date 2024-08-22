@@ -1,0 +1,141 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Alexa Smart Properties Hospitality Demo Skill",
+          "examplePhrases": [
+            "Alexa open demo hotel",
+            "tell me about the rooftop bar",
+            "what are the hotel amenities"
+          ],
+          "keywords": [],
+          "name": "Maveri Hotel",
+          "description": "Alexa Smart Properties Hospitality Demo Skill shows hotel scenarios where Alexa can be useful.",
+          "smallIconUri": "file://assets/images/en-US_smallIconUri.png",
+          "updatesDescription": "First version.",
+          "largeIconUri": "file://assets/images/en-US_largeIconUri.png"
+        }
+      },
+      "automaticDistribution": {
+        "isActive": false
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "This is a hospitality demo skill for Alexa Smart Properties.",
+      "category": "HOTEL_FINDERS",
+      "distributionMode": "PUBLIC",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "nameFreeInteraction": {
+          "availability": [
+            "PREFERRED"
+          ]
+        },
+        "tasks": [
+          {
+            "name": "facilityInfo",
+            "version": "1"
+          },
+          {
+            "name": "roomRequest",
+            "version": "1"
+          },
+          {
+            "name": "inRoomDining",
+            "version": "1"
+          },
+          {
+            "name": "tourActivity",
+            "version": "1"
+          },
+          {
+            "name": "loyaltyProgram",
+            "version": "1"
+          },
+          {
+            "name": "helpCollateral",
+            "version": "1"
+          },
+          {
+            "name": "nearbyEvent",
+            "version": "1"
+          },
+          {
+            "name": "homeMenu",
+            "version": "1"
+          },
+          {
+            "name": "checkOut",
+            "version": "1"
+          },
+          {
+            "name": "houseKeeping",
+            "version": "1"
+          },
+          {
+            "name": "phoneDirectory",
+            "version": "1"
+          },
+          {
+            "name": "wifiInfo",
+            "version": "1"
+          },
+          {
+            "name": "welcomeMe",
+            "version": "1"
+          },
+          {
+            "name": "callFrontdesk",
+            "version": "1"
+          }
+        ],
+        "interfaces": [
+          {
+            "supportedViewports": [
+              {
+                "minHeight": 600,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 959,
+                "minWidth": 960,
+                "maxWidth": 1279
+              },
+              {
+                "minHeight": 100,
+                "mode": "HUB",
+                "shape": "RECTANGLE",
+                "maxHeight": 599,
+                "minWidth": 960,
+                "maxWidth": 1279
+              }
+            ],
+            "type": "ALEXA_PRESENTATION_APL"
+          }
+        ],
+        "locales": {}
+      }
+    },
+    "manifestVersion": "1.0",
+    "permissions": [
+      {
+        "name": "alexa::persistent_unit_id::read"
+      }
+    ],
+    "privacyAndCompliance": {
+      "allowsPurchases": false,
+      "locales": {
+        "en-US": {}
+      },
+      "containsAds": false,
+      "isExportCompliant": true,
+      "isChildDirected": false,
+      "shoppingKit": {
+        "isShoppingActionsEnabled": false,
+        "isAmazonAssociatesOnAlexaEnabled": false
+      },
+      "usesPersonalInfo": false
+    }
+  }
+}

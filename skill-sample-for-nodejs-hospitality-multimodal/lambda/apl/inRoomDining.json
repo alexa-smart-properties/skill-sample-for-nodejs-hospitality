@@ -1,0 +1,233 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [
+        {
+            "type": "Sequential",
+            "commands": [
+                {
+                    "type": "Idle",
+                    "delay": 700
+                },
+                {
+                    "type": "ScrollToIndex",
+                    "componentId": "foodCategory",
+                    "index": 1,
+                    "align": "first",
+                    "targetDuration": 1000
+                },
+                {
+                    "type": "Idle",
+                    "delay": 700
+                },
+                {
+                    "type": "ScrollToIndex",
+                    "componentId": "foodCategory",
+                    "index": 0,
+                    "align": "first",
+                    "targetDuration": 1000
+                }
+            ]
+        }
+    ],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "direction": "column",
+                        "alignItems": "center",
+                        "type": "Container",
+                        "height": "70%",
+                        "width": "100%",
+                        "paddingTop": "10dp",
+                        "paddingLeft": "30dp",
+                        "paddingRight": "30dp",
+                        "items": [
+                            {
+                                "scrollDirection": "horizontal",
+                                "snap": "start",
+                                "type": "Sequence",
+                                "id": "foodCategory",
+                                "height": "20%",
+                                "width": "100%",
+                                "alignSelf": "center",
+                                "data": "${payload.pageData.items}",
+                                "items": [
+                                    {
+                                        "type": "AlexaButton",
+                                        "buttonText": "${data.category}",
+                                        "spacing": "@spacingSmall",
+                                        "primaryAction": [
+                                            {
+                                                "type": "ScrollToIndex",
+                                                "componentId": "menuList",
+                                                "index": "${index}",
+                                                "align": "first"
+                                            },
+                                            {
+                                                "type": "SetPage",
+                                                "componentId": "categoryImages",
+                                                "position": "absolute",
+                                                "value": "${index}"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "alignItems": "stretch",
+                                "direction": "row",
+                                "justifyContent": "spaceAround",
+                                "type": "Container",
+                                "height": "100%",
+                                "width": "100%",
+                                "items": [
+                                    {
+                                        "scrollDirection": "vertical",
+                                        "snap": "start",
+                                        "type": "Sequence",
+                                        "id": "menuList",
+                                        "data": "${payload.pageData.items}",
+                                        "height": "80%",
+                                        "width": "70%",
+                                        "bind": [
+                                            {
+                                                "name": "firstVisibleChild",
+                                                "value": 0
+                                            }
+                                        ],
+                                        "onScroll": [
+                                            {
+                                                "when": "${event.source.firstVisibleChild != firstVisibleChild}",
+                                                "type": "Parallel",
+                                                "sequencer": "SetPageSequencer",
+                                                "commands": [
+                                                    {
+                                                        "type": "SetPage",
+                                                        "componentId": "categoryImages",
+                                                        "position": "absolute",
+                                                        "value": "${event.source.firstVisibleChild}"
+                                                    },
+                                                    {
+                                                        "type": "SetValue",
+                                                        "property": "firstVisibleChild",
+                                                        "value": "${event.source.firstVisibleChild}"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "items": [
+                                            {
+                                                "items": [
+                                                    {
+                                                        "items": [
+                                                            {
+                                                                "type": "AlexaDivider"
+                                                            },
+                                                            {
+                                                                "type": "AlexaBackground",
+                                                                "backgroundColor": "#FFFFFF33"
+                                                            },
+                                                            {
+                                                                "type": "Text",
+                                                                "fontSize": "@fontSizeSmall",
+                                                                "fontFamily": "Amazon Ember Display",
+                                                                "fontStyle": "normal",
+                                                                "color": "#FFFFFF",
+                                                                "text": "<b>${data.category}</b>"
+                                                            },
+                                                            {
+                                                                "type": "AlexaDivider"
+                                                            }
+                                                        ],
+                                                        "type": "Container"
+                                                    },
+                                                    {
+                                                        "fontSize": "@fontSizeXSmall",
+                                                        "fontFamily": "Amazon Ember Display",
+                                                        "fontStyle": "normal",
+                                                        "color": "#FFFFFF",
+                                                        "text": "${data.content}",
+                                                        "type": "Text",
+                                                        "paddingLeft": "@spacingXSmall",
+                                                        "paddingTop": "@spacingXSmall"
+                                                    }
+                                                ],
+                                                "type": "Container",
+                                                "paddingRight": "@spacingXSmall",
+                                                "paddingBottom": "@spacingXSmall"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "items": [
+                                            {
+                                                "source": "${data.image}",
+                                                "scale": "best-fill",
+                                                "type": "Image"
+                                            }
+                                        ],
+                                        "type": "Pager",
+                                        "id": "categoryImages",
+                                        "data": "${payload.pageData.items}",
+                                        "disabled": true,
+                                        "height": "100%",
+                                        "width": "30%"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}"
+                    }
+                ]
+            }
+        ]
+    }
+}

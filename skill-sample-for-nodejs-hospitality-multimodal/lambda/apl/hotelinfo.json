@@ -1,0 +1,264 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "direction": "row",
+                        "type": "Container",
+                        "height": "@bodyHeight",
+                        "width": "@screenWidth",
+                        "paddingTop": "15dp",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "width": "@hotelInfoImageListContainerWidth",
+                                "height": "@hotelInfoImageListContainerHeight",
+                                "direction": "row",
+                                "items": [
+                                    {
+                                        "type": "Sequence",
+                                        "id": "alexaListView",
+                                        "snap": "start",
+                                        "width": "100%",
+                                        "height": "100%",
+                                        "data": "${payload.pageData.hotelInfoListData.listInfo}",
+                                        "scrollDirection": "vertical",
+                                        "spacing": "50vh",
+                                        "bind": [
+                                            {
+                                                "name": "firstVisibleChild",
+                                                "value": 0
+                                            }
+                                        ],
+                                        "onScroll": [
+                                            {
+                                                "when": "${event.source.firstVisibleChild != firstVisibleChild}",
+                                                "type": "Parallel",
+                                                "sequencer": "SetPageSequencer",
+                                                "commands": [
+                                                    {
+                                                        "type": "SetPage",
+                                                        "componentId": "detailsPager",
+                                                        "position": "absolute",
+                                                        "value": "${event.source.firstVisibleChild}"
+                                                    },
+                                                    {
+                                                        "type": "SetValue",
+                                                        "property": "firstVisibleChild",
+                                                        "value": "${event.source.firstVisibleChild}"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "item": [
+                                            {
+                                                "type": "TouchWrapper",
+                                                "width": "100%",
+                                                "height": "@hotelInfoImageListGridHeight",
+                                                "paddingLeft": "@hotelInfoImageListPaddingLeft",
+                                                "onPress": [
+                                                    {
+                                                        "type": "SetPage",
+                                                        "componentId": "detailsPager",
+                                                        "position": "absolute",
+                                                        "value": "${index}"
+                                                    }
+                                                ],
+                                                "item": [
+                                                    {
+                                                        "direction": "column",
+                                                        "type": "Container",
+                                                        "height": "100%",
+                                                        "width": "100%",
+                                                        "paddingRight": "15dp",
+                                                        "items": [
+                                                            {
+                                                                "align": "left",
+                                                                "source": "${data.imageSource}",
+                                                                "scale": "best-fill",
+                                                                "type": "Image",
+                                                                "height": "@hotelInfoImageHeight",
+                                                                "width": "100%",
+                                                                "shrink": 1
+                                                            },
+                                                            {
+                                                                "text": "${data.primaryText}",
+                                                                "fontSize": "@leftFrameImageContainerFontSize",
+                                                                "textAlign": "left",
+                                                                "fontStyle": "italic",
+                                                                "type": "Text"
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "direction": "column",
+                                "type": "Container",
+                                "height": "@hotelInfoContentHeight",
+                                "width": "@hotelInfoContentWidth",
+                                "paddingTop": "@hotelInfoContentPaddingTop",
+                                "paddingLeft": "@hotelInfoContentPaddingLeft",
+                                "items": [
+                                    {
+                                        "type": "Pager",
+                                        "id": "detailsPager",
+                                        "disabled": true,
+                                        "data": "${payload.pageData.hotelInfoListData.listInfo}",
+                                        "height": "100%",
+                                        "width": "100%",
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "direction": "row",
+                                                        "type": "Container",
+                                                        "height": "48%",
+                                                        "width": "@hotelInfoContentWidth",
+                                                        "items": [
+                                                            {
+                                                                "type": "Container",
+                                                                "width": "50%",
+                                                                "height": "100%",
+                                                                "direction": "column",
+                                                                "items": [
+                                                                    {
+                                                                        "text": "${data.title}",
+                                                                        "fontSize": "@rightFrameHotelInfoTitleFontSize",
+                                                                        "textAlign": "left",
+                                                                        "fontStyle": "normal",
+                                                                        "textAlignVertical": "center",
+                                                                        "id": "hotelInfo_main_title",
+                                                                        "type": "Text",
+                                                                        "height": "35%",
+                                                                        "width": "100%"
+                                                                    },
+                                                                    {
+                                                                        "text": "${data.location}",
+                                                                        "fontSize": "@rightFrameHotelInfoDetailsFontSize",
+                                                                        "textAlign": "left",
+                                                                        "color": "#FFFFFF",
+                                                                        "fontStyle": "normal",
+                                                                        "textAlignVertical": "center",
+                                                                        "type": "Text",
+                                                                        "id": "hotelInfo_main_location",
+                                                                        "height": "15%",
+                                                                        "width": "100%"
+                                                                    },
+                                                                    {
+                                                                        "text": "${data.hours}",
+                                                                        "fontSize": "@rightFrameHotelInfoDetailsFontSize",
+                                                                        "textAlign": "left",
+                                                                        "color": "#FFFFFF",
+                                                                        "fontStyle": "normal",
+                                                                        "textAlignVertical": "top",
+                                                                        "type": "Text",
+                                                                        "id": "hotelInfo_main_hours",
+                                                                        "height": "15%",
+                                                                        "width": "100%"
+                                                                    },
+                                                                    {
+                                                                        "text": "${data.phone}",
+                                                                        "fontSize": "@rightFrameHotelInfoDetailsFontSize",
+                                                                        "textAlign": "left",
+                                                                        "color": "#FFFFFF",
+                                                                        "fontStyle": "normal",
+                                                                        "textAlignVertical": "top",
+                                                                        "type": "Text",
+                                                                        "id": "hotelInfo_main_phone",
+                                                                        "height": "15%",
+                                                                        "width": "100%"
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "source": "${data.detailsImageSource}",
+                                                                "align": "center",
+                                                                "scale": "best-fill",
+                                                                "id": "hotelInfo_main_image",
+                                                                "type": "Image",
+                                                                "height": "95%",
+                                                                "width": "@hotelInfoImage2Width",
+                                                                "paddingRight": "100",
+                                                                "grow": 1
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "text": "${data.features}",
+                                                        "fontSize": "@rightFrameHotelInfoDetailsFontSize",
+                                                        "lineHeight": 1.4,
+                                                        "id": "hotelInfo_main_features",
+                                                        "type": "Text",
+                                                        "height": "52%",
+                                                        "width": "@hotelInfoInfoWidth"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}"
+                    }
+                ]
+            }
+        ]
+    }
+}

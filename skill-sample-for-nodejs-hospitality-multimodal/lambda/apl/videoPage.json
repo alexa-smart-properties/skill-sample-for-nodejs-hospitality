@@ -1,0 +1,149 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": "${payload.pageData.properties.onMount}",
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.properties.backgroundImageSource}"
+                    },
+                    {
+                        "direction": "column",
+                        "alignItems": "center",
+                        "type": "Container",
+                        "position": "absolute",
+                        "height": "100%",
+                        "width": "100%",
+                        "items": [
+                            {
+                                "type": "Text",
+                                "text": "${payload.pageData.properties.skillResponseOutput}",
+                                "speech": "${payload.pageData.properties.skillSpeechOutput}",
+                                "id": "videoSpokenText",
+                                "display": "normal",
+                                "height": "100%",
+                                "width": "80%",
+                                "textAlign": "center",
+                                "textAlignVertical": "center",
+                                "grow": 1
+                            },
+                            {
+                                "scale": "best-fill",
+                                "onEnd": "${payload.pageData.properties.videoOnEnd}",
+                                "onPause": [
+                                    {
+                                      "type": "SetValue",
+                                      "componentId": "alexaPlayPauseToggleButton",
+                                      "property": "checked",
+                                      "value": false
+                                    }
+                                ],
+                                "onPlay": [
+                                    {
+                                      "type": "SetValue",
+                                      "componentId": "alexaPlayPauseToggleButton",
+                                      "property": "checked",
+                                      "value": true
+                                    }
+                                ],                                
+                                "audioTrack": "${payload.pageData.properties.videoAudioTrack}",
+                                "id": "VIDEO_PLAYER",
+                                "type": "Video",
+                                "display": "normal",
+                                "height": "80%",
+                                "width": "100%",
+                                "alignSelf": "center",
+                                "source": [
+                                    {
+                                        "repeatCount": "${payload.pageData.properties.videoRepeatCount}",
+                                        "url": "${payload.pageData.properties.videoSource}"    
+                                    }
+                                ],
+                                "grow": 1
+                            }
+                        ]
+                    },
+                    {
+                        "type": "Container",
+                        "direction": "column",
+                        "width": "100%",
+                        "height": "80%",
+                        "position": "absolute",         
+                        "alignItems": "center",
+                        "justifyContent": "end",
+                        "items": [
+                            {
+                                "type": "Container",
+                                "direction": "row",
+                                "width": "100%",
+                                "alignItems": "center",
+                                "justifyContent": "center",
+                                "items": [
+                                    {
+                                        "type": "AlexaButton",
+                                        "buttonStyle": "contained",
+                                        "display": "${payload.pageData.properties.actionButtonDisplay}",
+                                        "buttonText": "${payload.pageData.properties.actionButtonText}",
+                                        "id": "actionButton",
+                                        "alignSelf": "center",
+                                        "primaryAction": "${payload.pageData.properties.actionButtonPrimaryAction}"            
+                                    }
+
+                                ]
+                            }
+                        ]                        
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.properties.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.properties.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.properties.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.properties.logoUrl}"            
+                    },
+                    {
+                        "items": [],
+                        "type": "Container",
+                        "height": "70%"
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.properties.alexa_hints}"
+                    }
+                ]
+            }
+        ]
+    }
+}

@@ -1,0 +1,182 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "direction": "row",
+                        "type": "Container",
+                        "height": "@bodyHeight",
+                        "width": "@screenWidth",
+                        "paddingTop": "15dp",
+                        "items": [
+                            {
+                                "alignItems": "center",
+                                "direction": "column",
+                                "justifyContent": "start",
+                                "spacing": "@spacingMedium",
+                                "items": [
+                                    {
+                                        "text": "${payload.pageData.leftFrameTitleText}",
+                                        "fontSize": "@leftFrameButtonTextSize",
+                                        "textAlign": "center",
+                                        "textAlignVertical": "bottom",
+                                        "type": "Text",
+                                        "width": "100%"
+                                    },
+                                    {
+                                        "align": "center",
+                                        "source": "${payload.pageData.folioImageUrl}",
+                                        "type": "Image",
+                                        "width": "100%",
+                                        "alignSelf": "auto",
+                                        "spacing": "@spacingSmall",
+                                        "grow": 1
+                                    }
+                                ],
+                                "type": "Container",
+                                "height": "100%",
+                                "width": "55%"
+                            },
+                            {
+                                "alignItems": "center",
+                                "direction": "column",
+                                "justifyContent": "center",
+                                "items": [
+                                    {
+                                        "fontSize": "@leftFrameFontSize",
+                                        "text": "${payload.pageData.confirmationTitleText}",
+                                        "textAlign": "center",
+                                        "fontWeight": "normal",
+                                        "type": "Text"
+                                    },
+                                    {
+                                        "direction": "row",
+                                        "justifyContent": "center",
+                                        "spacing": "@spacing2XSmall",
+                                        "type": "Container",
+                                        "items": [
+                                            {
+                                                "direction": "column",
+                                                "alignItems": "center",
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "type": "AlexaIconButton",
+                                                        "buttonStyle": "contained",
+                                                        "vectorSource": "M9.00001 19.0002C8.74401 19.0002 8.48801 18.9022 8.29301 18.7072L2.29301 12.7073C1.90201 12.3163 1.90201 11.6843 2.29301 11.2933C2.68401 10.9023 3.31601 10.9023 3.70701 11.2933L9.00001 16.5863L20.293 5.29325C20.684 4.90225 21.316 4.90225 21.707 5.29325C22.098 5.68425 22.098 6.31625 21.707 6.70725L9.70701 18.7072C9.51201 18.9022 9.25601 19.0002 9.00001 19.0002Z",
+                                                        "buttonSize": "@leftFrameButtonSize",
+                                                        "id": "CHECKOUT_YES_BUTTON",
+                                                        "primaryAction": {
+                                                            "type": "SendEvent",
+                                                            "componentId": "CHECKOUT_YES_BUTTON",
+                                                            "arguments": [
+                                                                "checkout-yes"
+                                                            ],
+                                                            "flags": {
+                                                                "interactionMode": "STANDARD"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "text": "${payload.pageData.yesButtonText}",
+                                                        "fontSize": "@leftFrameButtonTextSize",
+                                                        "type": "Text",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "spacing": "@spacingSmall",
+                                                "alignItems": "center",
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@leftFrameButtonSize",
+                                                        "vectorSource": "M19.071 17.6572L13.414 12.0002L19.071 6.34322C19.461 5.95322 19.461 5.31922 19.071 4.92922C18.681 4.53922 18.047 4.53922 17.657 4.92922L12 10.5862L6.34301 4.92922C5.95301 4.53922 5.31901 4.53922 4.92901 4.92922C4.53901 5.31922 4.53901 5.95322 4.92901 6.34322L10.586 12.0002L4.92901 17.6572C4.53801 18.0482 4.53901 18.6812 4.92901 19.0712C5.31901 19.4612 5.95201 19.4622 6.34301 19.0712L12 13.4142L17.657 19.0712C18.047 19.4612 18.681 19.4612 19.071 19.0712C19.461 18.6812 19.462 18.0472 19.071 17.6572Z",
+                                                        "buttonStyle": "contained",
+                                                        "id": "CHECKOUT_NO_BUTTON",
+                                                        "primaryAction": {
+                                                            "type": "SendEvent",
+                                                            "componentId": "CHECKOUT_NO_BUTTON",
+                                                            "arguments": [
+                                                                "checkout-no"
+                                                            ],
+                                                            "flags": {
+                                                                "interactionMode": "STANDARD"
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "text": "${payload.pageData.noButtonText}",
+                                                        "fontSize": "@leftFrameButtonTextSize",
+                                                        "type": "Text",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "type": "Container",
+                                "width": "45%",
+                                "paddingRight": "@frameRightPadding"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}"
+                    }
+                ]
+            }
+        ]
+    }
+}

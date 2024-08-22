@@ -1,0 +1,20 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "title": "Default Title to be replaced",
+        "textContent": "Default text content to be replaced",
+        "alexa_hints": [
+            "what's the wi-fi password?",
+            "call the front desk.",
+            "tell me about the restaurant.",
+            "when does the bar open?",
+            "I need more towels.",
+            "set alarm for 6 AM.",
+            "I want to checkout."
+        ]
+    }
+}

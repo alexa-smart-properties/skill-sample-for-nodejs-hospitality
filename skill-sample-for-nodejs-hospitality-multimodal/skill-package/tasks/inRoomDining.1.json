@@ -1,0 +1,64 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "In room dining menu",
+        "version": "1",
+        "x-amzn-alexa-access-scope": "public"
+    },
+    "tags": [{
+        "name": "In room dining menu"
+    }],
+    "paths": {
+        "/inRoomDining": {
+            "summary": "In room dining menu",
+            "description": "To display and show the in room dining menu for a property",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "examples": {
+                                "showMenu": {
+                                    "description": "Example input for launching and showing the menu, no input required",
+                                    "value": {}
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "When the task finishes successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessfulResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "When the given parameters fail validations"
+                    },
+                    "500": {
+                        "description": "When the task execution fails"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Input": {
+                "type": "object",
+                "properties": {}
+            },
+            "SuccessfulResponse": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    }
+}

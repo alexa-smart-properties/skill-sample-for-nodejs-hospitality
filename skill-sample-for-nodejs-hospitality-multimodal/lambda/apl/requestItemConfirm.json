@@ -1,0 +1,209 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "direction": "row",
+                        "alignItems": "center",
+                        "justifyContent": "spaceAround",
+                        "type": "Container",
+                        "height": "@bodyHeight",
+                        "width": "@screenWidth",
+                        "paddingTop": "15dp",
+                        "items": [
+                            {
+                                "alignItems": "center",
+                                "direction": "column",
+                                "justifyContent": "start",
+                                "type": "Container",
+                                "height": "100%",
+                                "width": "55%",
+                                "items": [
+                                    {
+                                        "scrollDirection": "vertical",
+                                        "numbered": true,
+                                        "snap": "start",
+                                        "type": "Sequence",
+                                        "id": "requestItemsList",
+                                        "data": "${payload.pageData.requestItems}",
+                                        "height": "100%",
+                                        "width": "100%",
+                                        "grow": 1,
+                                        "spacing": "@spacingXSmall",
+                                        "firstItem": [
+                                            {
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "text": "${payload.pageData.requestItemsListTitle}",
+                                                        "type": "Text",
+                                                        "fontSize": "@leftFrameListTitleFontSize",
+                                                        "paddingTop": "@TitleTopPadding"
+                                                    },
+                                                    {
+                                                        "type": "AlexaDivider",
+                                                        "paddingBottom": "@TitleBottomPadding"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "items": [
+                                            {
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "alignItems": "center",
+                                                        "direction": "row",
+                                                        "justifyContent": "spaceBetween",
+                                                        "wrap": "noWrap",
+                                                        "type": "Container",
+                                                        "paddingTop": "@ContentPaddingTop",
+                                                        "paddingBottom": "@ContentPaddingBottom",
+                                                        "items": [
+                                                            {
+                                                                "text": "${data.name}",
+                                                                "textAlign": "left",
+                                                                "textAlignVertical": "center",
+                                                                "maxLines": 1,
+                                                                "fontSize": "@leftFrameListItemFontSize",
+                                                                "paddingLeft": "@TitleLeftPadding",
+                                                                "type": "Text"
+                                                            },
+                                                            {
+                                                                "text": "${data.quantity}",
+                                                                "textAlign": "right",
+                                                                "textAlignVertical": "center",
+                                                                "maxLines": 1,
+                                                                "fontSize": "@leftFrameListItemFontSize",
+                                                                "type": "Text"
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "AlexaDivider",
+                                                        "width": "100%"
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            {
+                                "alignItems": "center",
+                                "direction": "column",
+                                "justifyContent": "start",
+                                "shrink": 1,
+                                "type": "Container",
+                                "height": "100%",
+                                "maxWidth": "36%",
+                                "items": [
+                                    {
+                                        "fontSize": "@leftFrameListTitleFontSize",
+                                        "text": "${payload.pageData.confirmationTitleText}",
+                                        "textAlign": "center",
+                                        "fontWeight": "normal",
+                                        "textAlignVertical": "top",
+                                        "type": "Text",
+                                        "paddingBottom": "@TitleBottomPadding",
+                                        "paddingTop": "@TitleTopPadding"
+                                    },
+                                    {
+                                        "alignItems": "center",
+                                        "direction": "column",
+                                        "type": "Container",
+                                        "items": [
+                                            {
+                                                "type": "AlexaButton",
+                                                "buttonIconName": "ic_done",
+                                                "buttonText": "${payload.pageData.yesButtonText}",
+                                                "primaryAction": {
+                                                    "type": "SendEvent",
+                                                    "componentId": "YES_BUTTON",
+                                                    "arguments": [
+                                                        "checkout-yes"
+                                                    ],
+                                                    "flags": {
+                                                        "interactionMode": "STANDARD"
+                                                    }
+                                                },
+                                                "id": "YES_BUTTON"
+                                            },
+                                            {
+                                                "type": "AlexaButton",
+                                                "buttonIconName": "ic_cancel",
+                                                "buttonText": "${payload.pageData.noButtonText}",
+                                                "primaryAction": {
+                                                    "type": "SendEvent",
+                                                    "componentId": "NO_BUTTON",
+                                                    "arguments": [
+                                                        "checkout-no"
+                                                    ],
+                                                    "flags": {
+                                                        "interactionMode": "STANDARD"
+                                                    }
+                                                },
+                                                "id": "NO_BUTTON"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}"
+                    }
+                ]
+            }
+        ]
+    }
+}

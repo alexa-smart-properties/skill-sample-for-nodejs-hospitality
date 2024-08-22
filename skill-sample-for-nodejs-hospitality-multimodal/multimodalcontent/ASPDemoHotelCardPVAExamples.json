@@ -1,0 +1,82 @@
+{
+	"info": {
+		"_postman_id": "b3de3c8d-546a-4fde-a973-113bdba76661",
+		"name": "Alexa Smart Properties - Demo Hotel Sample Rotating Cards and PVAs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": ""
+	},
+	"item": [
+		{
+			"name": "PVA - Welcome Guest Video",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"recipients\": [\n      {\n          \"type\": \"Unit\",\n          \"id\": \"{{UnitId}}\"\n      }\n  ],\n  \"notification\": {\n      \"variants\": [\n          {\n              \"type\": \"PersistentVisualAlert\",\n              \"content\": {\n                  \"variants\": [\n                      {\n                          \"type\": \"V0Template\",\n                          \"values\": [\n                              {\n                                  \"locale\": \"en-US\",\n                                  \"document\": {\n                                      \"type\": \"Link\",\n                                      \"src\": \"doc://alexa/apl/documents/enterprise/notifications/persistentvisualalert/optionListTemplate\"\n                                  },\n                                  \"datasources\": {\n                                     \n                                      \"headerText\": {\n                                        \"value\": \"Welcome to Maveri Resort!\"\n                                      },\n                                      \"primaryText\": {\n                                        \"value\": \"Here is a personal welcome message from us\"\n                                      },\n                                      \"backgroundImage\": {\n                                        \"src\": \"https://d169t4j5aqp8az.cloudfront.net/hotel-welcome-background.jpg\"\n                                        \n                                      },\n                                      \"thumbnailImage\": {\n                                        \"src\": \"https://d169t4j5aqp8az.cloudfront.net/hotel-welcome-thumbnail.jpg\"\n                                      },\n                                      \"actionButton\": {\n                                        \"value\": \"Dismiss\",\n                                        \"actions\": [\n                                            {\n                                                \"type\": \"DismissCardAction\"\n                                            }\n                                        ]\n                                      },\n                                      \"optionList\": [\n                                        {\n                                          \"primaryText\": \"Welcome me\",\n                                          \"actions\": [\n                                            {\n                                              \"type\": \"SkillConnectionAction\",\n                                              \"connectionUri\": \"connection://{{SkillId}}.welcomeMe/1?provider={{SkillId}}\",\n                                              \"input\": {\n                                              }\n                                            },                                                    \n                                            {\n                                              \"type\": \"DismissCardAction\"\n                                            }\n                                          ]\n                                        }                                          \n                                      ]\n                                    }\n                              }\n                          ]\n                      }\n                  ]\n              },\n              \"deliveryPreferences\": {\n                  \"indicator\": {\n                      \"sound\": {\n                          \"type\": \"CHIME\"\n                      }\n                  }\n              }\n        \n          }\n      ]\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://{{Host}}/v3/notifications",
+					"protocol": "https",
+					"host": [
+						"{{Host}}"
+					],
+					"path": [
+						"v3",
+						"notifications"
+					]
+				},
+				"description": "Send a Pinned Card into a unit\n---\n\nA Pinned Card is known as a Persistent Visual Alerts. Persistent visual alerts are only for devices with screens. A persistent visual alert is a notification that's displayed on the screen until it expires or the guest or resident dismisses it.\n\n\n\n**Note:** `notification.variants[].type` must be of type `PersistentVisualAlert ` to send a Pinned Card.\n\n---\n[see Online Doc](https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/asp-in-senior-living-notifications-api.html#send-notifications)"
+			},
+			"response": []
+		},
+		{
+			"name": "Proactive Suggestion - Spa Upsell",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suggestion\": {\n        \"variants\": [\n            {\n                \"placement\": {\n                    \"channel\": \"HOME\"\n                },\n                \"content\": {\n                    \"values\": [\n                        {\n                            \"locale\": \"en-US\",\n                            \"document\": {\n                                \"type\": \"Link\",\n                                \"src\": \"doc://alexa/apl/documents/home/cards/rating\"\n                            },\n                            \"datasources\": {\n                                \"displayText\": {\n                                    \"action\": {\n                                        \"type\": \"SkillConnection\",\n                                        \"uri\": \"connection://{{SkillId}}.facilityInfo/1?provider={{SkillId}}\",\n                                        \"input\": {\n                                            \"facility_type\": \"spa\",\n                                            \"information_type\": \"description\"\n                                        },\n                                        \"onCompletion\" : \"SEND_ERRORS_ONLY\"\n                                    },\n                                    \"hintText\": \"Try, \\\"Alexa, where is the spa?\\\"\",\n                                    \"ratingNumber\": 5,\n                                    \"ratingText\": \"12055\",\n                                    \"headerText\": \"Relax. Rejuvenate.\",\n                                    \"primaryText\": \"Treat yourself at the Sunrise Spa\"\n                                },\n                                \"background\": {\n                                    \"backgroundImageSource\": \"https://d169t4j5aqp8az.cloudfront.net/spa-background.jpg\"\n                                },\n                                \"thumbnail\": {\n                                    \"thumbnailImageSource\": \"https://d169t4j5aqp8az.cloudfront.net/spa-thumbnail.jpg\"\n                                },\n                                \"attribution\": null\n                            }\n                        }\n                    ]\n                }\n            }\n        ]\n    },\n  \"targeting\": {\n    \"units\": {\n      \"items\": [\n                \"{{UnitId}}\"\n      ]\n    }\n  },\n  \"scheduling\": {\n    \"activationWindow\": {\n            \"start\": \"{{StartDateTime}}\",\n            \"end\": \"{{EndDateTime}}\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.amazonalexa.com/v1/proactive/campaigns",
+					"protocol": "https",
+					"host": [
+						"api",
+						"amazonalexa",
+						"com"
+					],
+					"path": [
+						"v1",
+						"proactive",
+						"campaigns"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

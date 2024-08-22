@@ -1,0 +1,22 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "leftFrameTitleText": "Here is your final bill:",
+        "folioImageUrl": "https://d3qvi2egjrw5ks.cloudfront.net/MockFolio2.png",
+        "confirmationTitleText": "Are you sure you want to checkout?",
+        "yesButtonText": "Yes, check out",
+        "noButtonText": "No, don't check out",
+        "alexa_hints": [
+            "Yes",
+            "No",
+            "Yes",
+            "No",
+            "Yes",
+            "No"
+        ]    
+    }
+}

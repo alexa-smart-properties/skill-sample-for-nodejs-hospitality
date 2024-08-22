@@ -1,0 +1,43 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "title": "How to Connect To Wi-fi",
+        "titleDisplay": "normal",
+        "title2": "",
+        "title2Display": "none",
+        "title3": "Or, scan this QR code to connect",
+        "textContent": "Maveri Las Vegas offers free WI-FI to guests staying at the resort. <br> <br> To connect, open the WI-FI connection menu on your device or computer, and connect to \"Maveri-Guest\".<br><br>When asked to supply the password, use your room number followed by your last name. For your room, this would be \"2038Smith\".",
+        "priceText": "",
+        "priceDisplay": "none",
+        "buttonDisplay": "none",
+        "buttonId": "",
+        "buttonText": "",
+        "buttonPrimaryAction": "",
+        "availabilityText": "",
+        "availabilityDisplay": "none",
+        "delay": 3800,
+        "duration": 5000,
+        "rightTitleDisplay": "normal",
+        "rightPagerDotDisplay": "none",
+        "onMountRepeatCount": 0,
+        "scale": "best-fit",
+        "items": [
+            {
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/alexaqr.png"
+            }
+        ],
+        "alexa_hints": [
+            "what's the wi-fi password?",
+            "call the front desk.",
+            "tell me about the restaurant.",
+            "when does the bar open?",
+            "I need more towels.",
+            "set alarm for 6 AM.",
+            "I want to checkout."
+        ]
+    }
+}

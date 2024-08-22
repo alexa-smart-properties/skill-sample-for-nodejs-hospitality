@@ -1,0 +1,65 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Tour activity Details Page",
+        "version": "1",
+        "x-amzn-alexa-access-scope": "public"
+    },
+    "tags": [{
+        "name": "Tour activity Details Page"
+    }],
+    "paths": {
+        "/tourActivity": {
+            "summary": "Tour activity Details Page",
+            "description": "To display the tour activity details page.  This task's inputs are all optional, and are not used when launched from Rotating cards.  when no input are specified, just launch the page and ask customer for input",
+            "post": {
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Input"
+                            },
+                            "examples": {
+                                "noInput": {
+                                    "description": "just launch the tour activity details page, skill will solicit input for type and quantity",
+                                    "value": {
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "When the task finishes successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/SuccessfulResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "When the given parameters fail validations"
+                    },
+                    "500": {
+                        "description": "When the task execution fails"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Input": {
+                "type": "object",
+                "properties": {}
+            },
+            "SuccessfulResponse": {
+                "type": "object",
+                "properties": {}
+            }
+        }
+    }
+}

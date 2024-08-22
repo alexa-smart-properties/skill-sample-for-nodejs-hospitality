@@ -1,0 +1,227 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "bind": [
+                    {
+                        "name": "TotalPages",
+                        "value": "${payload.pageData.items.length}"
+                    },
+                    {
+                        "name": "PreviousIndex",
+                        "value": 0
+                    }
+                ],
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "direction": "row",
+                        "items": [
+                            {
+                                "items": [
+                                    {
+                                        "text": "${payload.pageData.title}",
+                                        "fontSize": "@leftFrameTitleFontSize",
+                                        "textAlign": "left",
+                                        "type": "Text"
+                                    },
+                                    {
+                                        "text": "${payload.pageData.title2}",
+                                        "fontSize": "@leftFrameSubTitleFontSize",
+                                        "textAlign": "left",
+                                        "spacing": "@spacing2XSmall",
+                                        "display": "${payload.pageData.title2Display}",
+                                        "type": "Text"
+                                    },
+                                    {
+                                        "type": "ScrollView",
+                                        "spacing": "@spacing2XSmall",
+                                        "grow": 1,
+                                        "shrink": 1,
+                                        "item": [
+                                            {
+                                                "fontSize": "@leftFrameTextfieldFontSize",
+                                                "text": "${payload.pageData.textContent}",
+                                                "type": "Text"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "Container",
+                                        "alignItems": "center",
+                                        "direction": "row",
+                                        "width": "100%",
+                                        "spacing": "@spacing2XSmall",
+                                        "items": [
+                                            {
+                                                "type": "AlexaButton",
+                                                "id": "${payload.pageData.buttonId}",
+                                                "buttonText": "${payload.pageData.buttonText}",
+                                                "display": "${payload.pageData.buttonDisplay}",
+                                                "primaryAction": "${payload.pageData.buttonPrimaryAction}"
+                                            },
+                                            {
+                                                "direction": "column",
+                                                "grow": 1,
+                                                "items": [
+                                                    {
+                                                        "text": "${payload.pageData.priceText}",
+                                                        "fontSize": "@leftFrameTextfieldFontSize",
+                                                        "fontWeight": "100",
+                                                        "display": "${payload.pageData.priceDisplay}",
+                                                        "type": "Text",
+                                                        "id": "priceText"
+                                                    },
+                                                    {
+                                                        "text": "${payload.pageData.availabilityText}",
+                                                        "fontSize": "@leftFrameSubTitleFontSize",
+                                                        "fontWeight": "bold",
+                                                        "display": "${payload.pageData.availabilityDisplay}",
+                                                        "type": "Text",
+                                                        "id": "availabilityText"
+                                                    }
+                                                ],
+                                                "alignItems": "end",
+                                                "justifyContent": "start",
+                                                "type": "Container"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "alignItems": "start",
+                                "direction": "column",
+                                "justifyContent": "start",
+                                "type": "Container",
+                                "width": "50%",
+                                "paddingLeft": "32px"
+                            },
+                            {
+                                "direction": "column",
+                                "justifyContent": "start",
+                                "width": "45%",
+                                "items": [
+                                    {
+                                        "text": "${payload.pageData.title3}",
+                                        "fontSize": "@fontSize2XSmall",
+                                        "type": "Text",
+                                        "display": "${payload.pageData.rightTitleDisplay}",
+                                        "width": "100%",
+                                        "textAlign": "center"
+                                    },
+                                    {
+                                        "onMount": [
+                                            {
+                                                "type": "SetPage",
+                                                "sequencer": "SetNextPage",
+                                                "delay": "${payload.pageData.delay}",
+                                                "position": "relative",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "onPageChanged": [
+                                            {
+                                                "type": "${event.source.value - PreviousIndex == 1 || PreviousIndex - event.source.value > 1  ? 'NextPage' : 'PreviousPage'}",
+                                                "componentId": "myDots",
+                                                "pageIndex": "${event.source.value}"
+                                            },
+                                            {
+                                                "type": "SetValue",
+                                                "componentId": "myDots",
+                                                "property": "PreviousIndex",
+                                                "value": "${event.source.value}"
+                                            },
+                                            {
+                                                "type": "SetPage",
+                                                "sequencer": "SetNextPage",
+                                                "delay": "${payload.pageData.delay}",
+                                                "position": "relative",
+                                                "value": 1
+                                            }
+                                        ],
+                                        "type": "Pager",
+                                        "navigation": "normal",
+                                        "id": "images",
+                                        "data": "${payload.pageData.items}",
+                                        "width": "100%",
+                                        "shrink": 1,
+                                        "paddingTop": "@spacingXSmall",
+                                        "grow": 1,
+                                        "items": [
+                                            {
+                                                "source": "${data.image}",
+                                                "scale": "${data.scale}",
+                                                "align": "center",
+                                                "type": "Image"
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "type": "AlexaPaginationDots",
+                                        "paginationDotsComponentId": "myDots",
+                                        "pageCount": "${TotalPages}",
+                                        "display": "${payload.pageData.rightPagerDotDisplay}"
+                                    }
+                                ],
+                                "spacing": "@spacingMedium",
+                                "type": "Container"
+                            }
+                        ],
+                        "type": "Container",
+                        "height": "@bodyHeight",
+                        "width": "@screenWidth",
+                        "paddingTop": "15dp"
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}"
+                    }
+                ]
+            }
+        ]
+    }
+}

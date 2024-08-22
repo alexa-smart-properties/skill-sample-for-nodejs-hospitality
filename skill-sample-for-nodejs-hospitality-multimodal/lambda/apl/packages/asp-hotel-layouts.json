@@ -1,0 +1,590 @@
+{    
+    "type": "APL",
+    "version": "2023.3",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        }
+    ],
+    "resources": [
+        {
+            "when": "${(@viewportProfile == @hubLandscapeMedium)}",
+            "dimensions": {
+                "screenWidth": "100vw",
+                "bodyHeight": "70vh",
+                "footerHeight": "12vh",
+                "headerHeight": "15vh",
+                "hotelInfoImageListContainerWidth": "30vw",
+                "hotelInfoImageListContainerHeight": "70vh",
+                "hotelInfoImageListGridHeight": "30vh",
+                "hotelInfoImageListPaddingLeft": "5vw",
+                "hotelInfoImageWidth": "278px",
+                "hotelInfoImageHeight": "185px",
+                "hotelInfoContentWidth": "70vw",
+                "hotelInfoContentHeight": "70vh",
+                "amentiyContentPadding": "@spacingMedium",                                
+                "amentiyContentPaddingRight": "@spacingMedium",
+                "amentiyContentItemPadding": "16px",
+                "ContentPaddingTop": "@spacing2XSmall",
+                "ContentPaddingBottom": "@spacing2XSmall",
+                "listItemMaxWidth": "45%",
+                "listItemMaxHeight": "20vh",
+                "twoDigitWidth": "15%",
+                "timeFontSize": "55dp",
+                "timeFontWidth": "20vw",
+                "headerPaddingLeft": "32px",
+                "headerPaddingRight": "32px",
+                "headerPaddingTop": "20px",
+                "headerPaddingBottom": "20px",
+                "footerPaddingLeft": "32px",
+                "footerPaddingRight": "32px",
+                "headerRoomInfoWidth": "40vw",
+                "headerRoomInfoPaddingTop": "20px",
+                "headerDividerPaddingTop": "10px",
+                "headerDividerWidth": "5vw",
+                "headerDividerHeight": "100%",
+                "headerLogoWidth": "15vw",
+                "headerLogoHeight": "70%",
+                "AlexaIconSize": "45",
+                "footerHintWidth": "50vw",
+                "footerHintPaddingTop": "5",
+                "footerHintPaddingLeft": "10",
+                "footerHintPaddingRightt": "10",
+                "footerHintTextSize": "22dp",
+                "footerBtnsWidth": "55vw",
+                "footerBtnPaddingTop": "5",
+                "hotelInfoImage2Height": "170",
+                "hotelInfoImage2Width": "300",
+                "hotelInfoInfoWidth": "64vw",
+                "hotelInfoContentPaddingTop": "16",
+                "hotelInfoContentPaddingLeft": "2vw",
+                "headerTimeFontSize": "50dp",
+                "headerGuestNameFontSize": "30dp",
+                "headerRoomFontSize": "20dp",
+                "mainMenuButtonSize":"120dp",
+                "mainMenuButtonTextfontSize":"20dp",
+                "mainMenuButtonContainerSize":"18%",
+                "rightFrameAlexaCardWidth":"46%",
+                "rightFrameAlexaCardTopPadding":"30",
+                "rightFrameHotelInfoDetailsFontSize": "@fontSize2XSmall",                
+                "footerButtonSize": "70dp",
+                "TitleFontSize": "@fontSizeLarge",
+                "TitleTopPadding": "15px",
+                "TitleLeftPadding": "15px",
+                "TitleBottomPadding": "15px",
+                "leftFrameTitleFontSize": "@spacingMedium",
+                "leftFrameSubTitleFontSize": "@fontSizeXSmall",
+                "leftFrameImageContainerFontSize": "@fontSize2XSmall",
+                "rightFrameHotelInfoTitleFontSize": "@fontSizeLarge",
+                "leftFrameFontSize": "@fontSizeLarge",
+                "leftFrameButtonSize": "110dp",
+                "leftFrameButtonTextSize": "@fontSize2XSmall",
+                "leftFrameTextfieldFontSize": "@fontSize2XSmall",
+                "leftFrameListTitleFontSize": "@fontSizeSmall",
+                "leftFrameListItemFontSize": "@fontSizeSmall",
+                "directoryFontSize": "@fontSizeMedium",
+                "frameRightPadding": "15dp",
+                "singleFrameTitleFontSize": "@fontSize2XSmall"
+            }
+        },
+        {
+            "when": "${(@viewportProfile == @hubLandscapeXLarge)}",
+            "dimensions": {
+                "screenWidth": "100vw",
+                "bodyHeight": "70vh",
+                "footerHeight": "12vh",
+                "headerHeight": "15vh",
+                "hotelInfoImageListContainerWidth": "30vw",
+                "hotelInfoImageListContainerHeight": "70vh",
+                "hotelInfoImageListGridHeight": "23vh",
+                "hotelInfoImageListPaddingLeft": "5vw",
+                "hotelInfoImageWidth": "278px",
+                "hotelInfoImageHeight": "185px",
+                "hotelInfoContentWidth": "70vw",
+                "hotelInfoContentHeight": "70vh",
+                "amentiyContentPadding": "@spacingMedium",                
+                "amentiyContentPaddingRight": "@spacingMedium",
+                "amentiyContentItemPadding": "16px",
+                "ContentPaddingTop": "@spacing2XSmall",
+                "ContentPaddingBottom": "@spacing2XSmall",
+                "listItemMaxWidth": "35%",
+                "listItemMaxHeight": "20vh",
+                "twoDigitWidth": "15%",
+                "timeFontSize": "55dp",
+                "timeFontWidth": "20vw",
+                "headerPaddingLeft": "32px",
+                "headerPaddingRight": "32px",
+                "headerPaddingTop": "20px",
+                "headerPaddingBottom": "20px",
+                "footerPaddingLeft": "32px",
+                "footerPaddingRight": "32px",
+                "headerRoomInfoWidth": "40vw",
+                "headerRoomInfoPaddingTop": "20px",
+                "headerDividerPaddingTop": "10px",
+                "headerDividerWidth": "5vw",
+                "headerDividerHeight": "100%",
+                "headerLogoWidth": "15vw",
+                "headerLogoHeight": "70%",
+                "AlexaIconSize": "45",
+                "footerHintWidth": "50vw",
+                "footerHintPaddingTop": "5",
+                "footerHintPaddingLeft": "10",
+                "footerHintPaddingRightt": "10",
+                "footerHintTextSize": "22dp",
+                "footerBtnsWidth": "55vw",
+                "footerBtnPaddingTop": "5",
+                "hotelInfoImage2Height": "200",
+                "hotelInfoImage2Width": "300",
+                "hotelInfoInfoWidth": "64vw",
+                "hotelInfoContentPaddingTop": "16",
+                "hotelInfoContentPaddingLeft": "2vw",
+                "headerTimeFontSize": "80dp",
+                "headerGuestNameFontSize": "40dp",
+                "headerRoomFontSize": "30dp",
+                "mainMenuButtonSize":"180dp",
+                "mainMenuButtonTextfontSize":"25dp",
+                "mainMenuButtonContainerSize":"15%",
+                "rightFrameAlexaCardWidth":"52%",
+                "rightFrameAlexaCardTopPadding":"120",
+                "rightFrameHotelInfoDetailsFontSize": "@fontSizeMedium",
+                "footerButtonSize": "90dp",
+                "TitleFontSize": "@fontSizeLarge",
+                "TitleLeftPadding": "15px",
+                "TitleTopPadding": "15px",
+                "TitleBottomPadding": "15px",
+                "leftFrameTitleFontSize": "@spacingLarge",
+                "leftFrameSubTitleFontSize": "@fontSizeXSmall",
+                "leftFrameImageContainerFontSize": "@fontSizeMedium",
+                "rightFrameHotelInfoTitleFontSize": "@fontSize2XLarge",
+                "leftFrameFontSize": "@fontSizeXLarge",
+                "leftFrameButtonSize": "180dp",
+                "leftFrameButtonTextSize": "@fontSizeSmall",
+                "leftFrameTextfieldFontSize": "@fontSizeSmall",
+                "leftFrameListTitleFontSize": "@fontSizeMedium",
+                "leftFrameListItemFontSize": "@fontSizeMedium",
+                "directoryFontSize": "@fontSizeLarge",
+                "frameRightPadding": "15dp",
+                "singleFrameTitleFontSize": "@fontSizeSmall"
+            }
+        },
+        {
+            "when": "${(@viewportProfile == @hubLandscapeSmall)}",
+            "dimensions": {
+                "screenWidth": "100vw",
+                "bodyHeight": "70vh",
+                "footerHeight": "12vh",
+                "headerHeight": "15vh",
+                "hotelInfoImageListContainerWidth": "30vw",
+                "hotelInfoImageListContainerHeight": "70vh",
+                "hotelInfoImageListGridHeight": "30vh",
+                "hotelInfoImageListPaddingLeft": "5vw",
+                "hotelInfoImageWidth": "278px",
+                "hotelInfoImageHeight": "185px",
+                "hotelInfoContentWidth": "70vw",
+                "hotelInfoContentHeight": "70vh",
+                "amentiyContentPadding": "@spacingMedium",                
+                "amentiyContentPaddingRight": "@spacingMedium",
+                "amentiyContentItemPadding": "16px",
+                "ContentPaddingTop": "@spacing2XSmall",
+                "ContentPaddingBottom": "@spacing2XSmall",
+                "listItemMaxWidth": "35%",
+                "listItemMaxHeight": "20vh",
+                "twoDigitWidth": "15%",
+                "timeFontSize": "55dp",
+                "timeFontWidth": "20vw",
+                "headerPaddingLeft": "32px",
+                "headerPaddingRight": "32px",
+                "headerPaddingTop": "20px",
+                "headerPaddingBottom": "20px",
+                "footerPaddingLeft": "32px",
+                "footerPaddingRight": "32px",
+                "headerRoomInfoWidth": "40vw",
+                "headerRoomInfoPaddingTop": "20px",
+                "headerDividerPaddingTop": "10px",
+                "headerDividerWidth": "5vw",
+                "headerDividerHeight": "100%",
+                "headerLogoWidth": "15vw",
+                "headerLogoHeight": "70%",
+                "AlexaIconSize": "45",
+                "footerHintWidth": "50vw",
+                "footerHintPaddingTop": "5",
+                "footerHintPaddingLeft": "10",
+                "footerHintPaddingRightt": "10",
+                "footerHintTextSize": "22dp",
+                "footerBtnsWidth": "55vw",
+                "footerBtnPaddingTop": "5",
+                "hotelInfoImage2Height": "170",
+                "hotelInfoImage2Width": "300",
+                "hotelInfoInfoWidth": "64vw",
+                "hotelInfoContentPaddingTop": "16",
+                "hotelInfoContentPaddingLeft": "2vw",
+                "headerTimeFontSize": "40dp",
+                "headerGuestNameFontSize": "25dp",
+                "headerRoomFontSize": "20dp",
+                "mainMenuButtonSize":"80dp",
+                "mainMenuButtonTextfontSize":"15dp",
+                "mainMenuButtonContainerSize":"18%",
+                "rightFrameAlexaCardWidth":"52%",
+                "rightFrameAlexaCardTopPadding":"30",                
+                "rightFrameHotelInfoDetailsFontSize": "@fontSize2XSmall",
+                "footerButtonSize": "50dp",
+                "TitleFontSize": "@fontSizeLarge",
+                "TitleLeftPadding": "15px",
+                "TitleTopPadding": "15px",
+                "TitleBottomPadding": "15px",
+                "leftFrameTitleFontSize": "@fontSizeXSmall",
+                "leftFrameParagraphSize": "@fontSizeSmall",
+                "leftFrameSubTitleFontSize": "@fontSizeXSmall",
+                "leftFrameFontSize": "@fontSizeLarge",
+                "leftFrameListTitleFontSize": "@fontSize2XSmall",
+                "leftFrameListItemFontSize": "@fontSize2XSmall",
+                "leftFrameImageContainerFontSize": "@fontSize2XSmall",
+                "rightFrameHotelInfoTitleFontSize": "@fontSizeMedium",
+                "leftFrameButtonSize": "110dp",
+                "leftFrameButtonTextSize": "@fontSize2XSmall",
+                "leftFrameTextfieldFontSize": "@fontSize2XSmall",
+                "directoryFontSize": "@fontSizeSmall",
+                "frameRightPadding": "15dp",
+                "singleFrameTitleFontSize": "@fontSize2XSmall"
+            }
+        }
+    ],
+    "layouts": {
+        "hotelHeader": {
+            "parameters": [
+                {
+                    "name": "clockDisplay",
+                    "type": "string",
+                    "default": "normal"
+                },
+                {
+                  "name": "headerPrimaryText",
+                  "type": "string",                  
+                  "default": ""
+                },
+                {
+                  "name": "headerSecondaryText",
+                  "type": "string",                  
+                  "default": ""
+                },
+                {
+                    "name": "dividerImageSource",
+                    "type": "string",                    
+                    "default": ""
+                },
+                {
+                    "name": "logoUrl",
+                    "type": "string",                    
+                    "default": ""
+                }
+            ],
+            "items": [
+                {
+                    "direction": "row",
+                    "alignItems": "center",
+                    "type": "Container",
+                    "height": "15%",
+                    "width": "100%",   
+                    "id": "hotelHeader", 
+                    "items": [
+                        {
+                            "display": "${clockDisplay}",
+                            "fontSize": "@headerTimeFontSize",
+                            "color": "#FFFFFF",
+                            "fontStyle": "normal",
+                            "textAlign": "left",
+                            "textAlignVertical": "center",
+                            "text": "${Time.format('HH:mm', T)}",
+                            "type": "Text",
+                            "bind": [
+                                {
+                                    "name": "T",
+                                    "value": "${localTime}"
+                                },
+                                {
+                                    "name": "H",
+                                    "value": "${Time.hours(localTime)}"
+                                }
+                            ],
+                            "width": "30%",
+                            "paddingLeft": "@headerPaddingLeft"
+                        },
+                        {
+                            "direction": "column",
+                            "alignItems": "stretch",
+                            "justifyContent": "center",
+                            "items": [
+                                {
+                                    "fontSize": "@headerGuestNameFontSize",
+                                    "fontFamily": "Amazon Ember Display",
+                                    "fontStyle": "normal",
+                                    "color": "#FFFFFF",
+                                    "textAlign": "right",
+                                    "textAlignVertical": "center",
+                                    "text": "${headerPrimaryText}",
+                                    "type": "Text",
+                                    "paddingTop": "13dp"
+                                },
+                                {
+                                    "fontSize": "@headerRoomFontSize",
+                                    "fontFamily": "Amazon Ember Display",
+                                    "fontStyle": "normal",
+                                    "color": "#FFFFFF",
+                                    "textAlign": "right",
+                                    "textAlignVertical": "center",
+                                    "text": "${headerSecondaryText}",
+                                    "type": "Text"
+                                }
+                            ],
+                            "type": "Container",
+                            "width": "45%"
+                        },
+                        {
+                            "source": "${dividerImageSource}",
+                            "type": "Image",
+                            "height": "@headerDividerHeight",
+                            "width": "@headerDividerWidth",
+                            "paddingTop": "13",
+                            "alignSelf": "center"
+                        },
+                        {
+                            "align": "left",
+                            "source": "${logoUrl}",
+                            "scale": "best-fit-down",
+                            "type": "Image",
+                            "height": "@headerLogoHeight",
+                            "width": "@headerLogoHeight",
+                            "paddingRight": "@headerPaddingRight",
+                            "paddingTop": "13"
+                        }
+                    ]
+                }   
+            ]
+        },
+        "hotelFooter": {
+            "parameters": [
+                {
+                    "name": "hintTextArray",
+                    "type": "array",
+                    "default": []
+                },
+                {
+                    "name": "requstSubmitButtonDisplay",
+                    "type": "string",
+                    "default": "none"
+                },
+                {
+                  "name": "helpButtonDisplay",
+                  "type": "string",
+                  "default": "normal"
+                },
+                {
+                  "name": "wifiButtonDisplay",
+                  "type": "string",
+                  "default": "normal"
+                },
+                {
+                    "name": "menuButtonDisplay",
+                    "type": "string",
+                    "default": "normal"
+                },
+                {
+                    "name": "exitButtonDisplay",
+                    "type": "string",
+                    "default": "none"
+                }
+            ],
+            "items": [
+                {
+                    "direction": "row",
+                    "alignItems": "center",
+                    "type": "Container",
+                    "height": "15%",
+                    "width": "100%",
+                    "id": "hotelFooter",
+                    "items": [
+                        {
+                            "alignItems": "center",
+                            "direction": "row",
+                            "justifyContent": "spaceAround",
+                            "type": "Container",
+                            "height": "100%",
+                            "paddingLeft": "@footerPaddingLeft",
+                            "items": [
+                                {
+                                    "type": "Text",
+                                    "fontSize": "@footerHintTextSize",
+                                    "text": "Try, \"Alexa, ${hints[(Time.seconds(localTime/5)) % 5]}\" ",
+                                    "fontFamily": "Bookerly",
+                                    "fontStyle": "italic",
+                                    "id": "alexa_hint",
+                                    "bind": [
+                                        {
+                                            "name": "hints",
+                                            "value": "${hintTextArray}"
+                                        }
+                                    ],
+                                    "width": "@footerHintWidth",
+                                    "paddingLeft": "@footerHintPaddingLeft",
+                                    "paddingTop": "@footerHintPaddingTop"
+                                }
+                            ]
+                        },
+                        {
+                            "direction": "row",
+                            "alignItems": "center",
+                            "grow": 1,
+                            "justifyContent": "end",
+                            "type": "Container",
+                            "height": "100%",
+                            "paddingRight": "@footerPaddingRight",
+                            "items": [
+                                {
+                                    "type": "Frame",
+                                    "display": "${requstSubmitButtonDisplay}",
+                                    "spacing": "@spacing2XSmall",
+                                    "items": [
+                                        {
+                                            "when": "${(@viewportProfile == @hubLandscapeXLarge)}",
+                                            "type": "AlexaButton",
+                                            "id": "SUBMIT_BUTTON",
+                                            "buttonStyle": "contained",
+                                            "disabled": "${amenitiesTotal == 0}",
+                                            "buttonText": "Send Request",
+                                            "transform": [ { "scaleX": 1.5 }, { "scaleY": 1.5 }, {"translateX": "-20%"}],
+                                            "primaryAction": [
+                                                {
+                                                    "type": "SendEvent",
+                                                    "arguments": [
+                                                        "${amenitiesAmounts}"
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "when": "${(@viewportProfile != @hubLandscapeXLarge)}",
+                                            "type": "AlexaButton",
+                                            "id": "SUBMIT_BUTTON",
+                                            "buttonStyle": "contained",
+                                            "disabled": "${amenitiesTotal == 0}",
+                                            "buttonText": "Send Request",
+                                            "primaryAction": [
+                                                {
+                                                    "type": "SendEvent",
+                                                    "arguments": [
+                                                        "${amenitiesAmounts}"
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Frame",
+                                    "display": "${wifiButtonDisplay}",
+                                    "spacing": "@spacing2XSmall",
+                                    "items": [
+                                        {
+                                            "type": "AlexaIconButton",
+                                            "id": "WIFI_INFO_BUTTON",
+                                            "vectorSource": "M23.6 6C17-.1 6.7-.1 0 6c-.2.2-.3.6 0 .9l1.3 1.3c.2.2.6.2.8 0 5.5-5 13.9-5 19.4 0 .2.2.6.2.8 0l1.3-1.3c.2-.2.2-.6 0-.9zm-11.8 7.4c-1.3 0-2.4 1.1-2.4 2.4s1.1 2.4 2.4 2.4 2.4-1.1 2.4-2.4-1.1-2.4-2.4-2.4zm7.6-3.1c-4.3-3.9-10.9-3.8-15.2 0-.2.2-.2.6 0 .8l1.3 1.3c.2.2.6.2.8 0 3.1-2.7 7.9-2.7 11 0 .2.2.6.2.8 0l1.3-1.3c.2-.2.2-.6 0-.9z",
+                                            "buttonSize": "@footerButtonSize",
+                                            "buttonStyle": "contained",
+                                            "primaryAction": {
+                                                "type": "SendEvent",
+                                                "componentId": "WIFI_INFO_BUTTON",
+                                                "arguments": [
+                                                    "WifiAccessFreeIntent"
+                                                ],
+                                                "flags": {
+                                                    "interactionMode": "STANDARD"
+                                                }
+                                            }
+                                        }        
+                                    ]
+                                },
+                                {
+                                    "type": "Frame",
+                                    "display": "${helpButtonDisplay}",
+                                    "spacing": "@spacing2XSmall",
+                                    "items": [
+                                        {
+                                            "type": "AlexaIconButton",
+                                            "id": "HELP_BUTTON",                                    
+                                            "vectorSource": "M23.3 11.6c0 6.4-5.3 11.7-11.7 11.7S0 18 0 11.6C0 5.2 5.2 0 11.6 0s11.6 5.2 11.6 11.6zM11.9 3.8c-2.6 0-4.2 1.1-5.5 3-.1.3 0 .6.2.8l1.6 1.2c.3.2.6.2.8-.1.8-1 1.4-1.6 2.7-1.6 1 0 2.1.6 2.1 1.5 0 .7-.6 1.1-1.5 1.6-1.1.6-2.6 1.4-2.6 3.3v.2c0 .3.3.6.6.6h2.6c.3 0 .6-.3.6-.6v-.1c0-1.3 3.9-1.4 3.9-5 0-2.7-2.8-4.8-5.5-4.8zm-.3 11.7c-1.2 0-2.2 1-2.2 2.2 0 1.2 1 2.2 2.2 2.2s2.2-1 2.2-2.2c0-1.2-1-2.2-2.2-2.2z",
+                                            "buttonSize": "@footerButtonSize",
+                                            "buttonStyle": "contained",
+                                            "primaryAction": {
+                                                "type": "SendEvent",
+                                                "componentId": "HELP_BUTTON",
+                                                "arguments": [
+                                                    "help"
+                                                ],
+                                                "flags": {
+                                                    "interactionMode": "STANDARD"
+                                                }
+                                            }
+                                        }        
+                                    ]
+                                },
+                                {
+                                    "type": "Frame",
+                                    "display": "${menuButtonDisplay}",      
+                                    "spacing": "@spacing2XSmall",
+                                    "items": [
+                                        {
+                                            "type": "AlexaIconButton",
+                                            "id": "MENU_BUTTON",                                    
+                                            "vectorSource": "m13.1 3.1-1-1c-.4-.4-1.2-.4-1.6 0l-9.1 9.1c-.4.4-.4 1.2 0 1.6l9.1 9.1c.4.4 1.2.4 1.6 0l1-1c.4-.4.4-1.2 0-1.6l-5.6-5.4H20.9c.6-.1 1.1-.6 1.1-1.2v-1.5c0-.7-.5-1.2-1.1-1.2h-13.5l5.7-5.3c.5-.4.5-1.2 0-1.6z",
+                                            "buttonSize": "@footerButtonSize",
+                                            "buttonStyle": "contained",
+                                            "primaryAction": {
+                                                "type": "SendEvent",
+                                                "componentId": "MENU_BUTTON",
+                                                "arguments": [
+                                                    "home"
+                                                ],
+                                                "flags": {
+                                                    "interactionMode": "STANDARD"
+                                                }
+                                            }
+                                        }        
+                                    ]
+                                },
+                                {
+                                    "type": "Frame",
+                                    "display": "${exitButtonDisplay}",
+                                    "spacing": "@spacing2XSmall",
+                                    "items": [
+                                        {
+                                            "type": "AlexaIconButton",
+                                            "id": "EXIT_BUTTON",
+                                            "vectorSource": "m10.9 3.1 1-1c.4-.4 1.2-.4 1.6 0l9.1 9.1c.4.4 .4 1.2 0 1.6l-9.1 9.1c-.4.4-1.2.4-1.6 0l-1-1c-.4-.4-.4-1.2 0-1.6l5.6-5.4H3.1c-.6-.1-1.1-.6-1.1-1.2v-1.5c0-.7.5-1.2 1.1-1.2h13.5l-5.7-5.3c-.5-.4-.5-1.2 0-1.6z",
+                                            "buttonSize": "@footerButtonSize",
+                                            "buttonStyle": "contained",
+                                            "primaryAction": {
+                                                "type": "SendEvent",
+                                                "componentId": "EXIT_BUTTON",
+                                                "arguments": [
+                                                    "exit"
+                                                ],
+                                                "flags": {
+                                                    "interactionMode": "STANDARD"
+                                                }
+                                            }
+                                        }        
+                                    ]                                    
+                                }
+                           ]
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}

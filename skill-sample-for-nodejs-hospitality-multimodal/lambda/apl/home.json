@@ -1,0 +1,305 @@
+{
+    "type": "APL",
+    "version": "2023.3",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [],
+    "graphics": {},
+    "commands": {},
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "items": [
+            {
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "type": "Container",
+                        "width": "100%",
+                        "height": "70%",
+                        "items": [
+                            {
+                                "direction": "row",
+                                "justifyContent": "start",
+                                "type": "Container",
+                                "height": "100%",
+                                "width": "100%",
+                                "items": [
+                                    {
+                                        "direction": "column",
+                                        "justifyContent": "center",
+                                        "alignItems": "center",
+                                        "position": "relative",
+                                        "items": [
+                                            {
+                                                "direction": "column",
+                                                "justifyContent": "spaceBetween",
+                                                "position": "relative",
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "id": "HOTEL_INFO_BUTTON",
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@mainMenuButtonSize",
+                                                        "vectorSource": "M11.6 0C5.2 0 0 5.2 0 11.6 0 18 5.2 23.3 11.6 23.3S23.3 18 23.3 11.6C23.3 5.2 18 0 11.6 0zm0 5.2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm2.7 11.9c0 .3-.3.6-.6.6H9.6c-.3-.1-.6-.3-.6-.6V16c0-.3.3-.6.6-.6h.6v-3h-.6c-.3 0-.6-.3-.6-.6v-1.1c0-.3.3-.6.6-.6h3c.3 0 .6.3.6.6v4.7h.6c.3 0 .6.3.6.6v1.1z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": "${payload.pageData.event.amenityMainAction}"
+                                                    },
+                                                    {
+                                                        "text": "Hotel Info",
+                                                        "fontSize": "@mainMenuButtonTextfontSize",
+                                                        "textAlign": "center",
+                                                        "textAlignVertical": "auto",
+                                                        "type": "Text",
+                                                        "style": "textStyleBody",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "justifyContent": "spaceBetween",
+                                                "direction": "column",
+                                                "position": "relative",
+                                                "type": "Container",
+                                                "paddingTop": "30",
+                                                "items": [
+                                                    {
+                                                        "id": "AMENITIES_BUTTON",
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@mainMenuButtonSize",
+                                                        "vectorSource": "m2.208 7.069 7.05-2.169a9.042 9.042 0 0 1 5.617.098l6.781 2.347a1.813 1.813 0 0 1 .121 3.379l-8.212 3.519a4.742 4.742 0 0 1-3.356.139l-8.775-2.925h0a.45.45 0 0 1-.309-.427.911 .911 0 0 1 .135-.469l7.394 2.352a4.478 4.478 0 0 0 1.359.211 1.237 1.237 0 0 0 .36-2.419l-8.014-2.437-.218.718 8.015 2.438a.488.488 0 0 1-.142.952 3.737 3.737 0 0 1-1.133-.176l-7.478-2.38a3.193 3.193 0 0 1-.276-1.284 1.527 1.527 0 0 1 1.083-1.467zm20.359 9.262-8.775 2.925a4.746 4.746 0 0 1-3.356-.14l-8.213-3.517a1.809 1.809 0 0 1-.277-3.179l8.025 2.675a5.475 5.475 0 0 0 3.889-.162l7.374-3.16.558 .172a1.527 1.527 0 0 1 1.083 1.465 3.193 3.193 0 0 1-.276 1.284l-7.479 2.38a3.737 3.737 0 0 1-1.132.176 .488.488 0 0 1-.142-.952l8.014-2.437-.218-.718-8.015 2.438a1.237 1.237 0 0 0 .361 2.419 4.478 4.478 0 0 0 1.36-.211l7.393-2.352a.911.911 0 0 1 .134.469 .45.45 0 0 1-.308.427z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": "${payload.pageData.event.roomItemRequestAction}"
+                                                    },
+                                                    {
+                                                        "text": "Item Request",
+                                                        "fontSize": "@mainMenuButtonTextfontSize",
+                                                        "textAlign": "center",
+                                                        "textAlignVertical": "auto",
+                                                        "type": "Text",
+                                                        "style": "textStyleBody",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "type": "Container",
+                                        "width": "@mainMenuButtonContainerSize",
+                                        "left": "15dp"
+                                    },
+                                    {
+                                        "direction": "column",
+                                        "justifyContent": "center",
+                                        "alignItems": "center",
+                                        "position": "relative",
+                                        "items": [
+                                            {
+                                                "direction": "column",
+                                                "justifyContent": "spaceBetween",
+                                                "position": "relative",
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "id": "ROOMSERVICE_BUTTON",
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@mainMenuButtonSize",
+                                                        "vectorSource": "M21.4 11.5H1.9c-1.7 0-2.8 1.9-1.9 3.4.4.7 1.1 1.1 1.9 1.1h19.5c1.7 0 2.8-1.9 1.9-3.4-.3-.7-1-1.1-1.9-1.1zm.8 6h-21c-.4 0-.7.3-.7.8v.7c0 1.7 1.3 3 3 3H20c1.7 0 3-1.3 3-3v-.7c0-.4-.3-.7-.7-.7zM2.4 10h18.5c1.6 0 2.6-2.1 1.6-3.6-1.8-3-5.9-5.4-10.8-5.4S2.7 3.4.8 6.4C-.1 7.9.8 10 2.4 10zm15.3-5.2c.6 0 .9.6.6 1.1s-1 .5-1.3 0c0-.1-.1-.3-.1-.4 0-.4.3-.8.8-.7zm-6-1.5c.6 0 .9.6.6 1.1s-1 .5-1.3 0c0-.1-.1-.3-.1-.4 0-.4.3-.8.8-.7zm-6 1.5c.6 0 .9.6.6 1.1s-1 .5-1.3 0c0-.1-.1-.3-.1-.4 0-.4.4-.8.8-.7z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": "${payload.pageData.event.roomServiceAction}"
+                                                    },
+                                                    {
+                                                        "text": "Room Service",
+                                                        "fontSize": "@mainMenuButtonTextfontSize",
+                                                        "textAlign": "center",
+                                                        "textAlignVertical": "auto",
+                                                        "type": "Text",
+                                                        "style": "textStyleBody",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "position": "relative",
+                                                "type": "Container",
+                                                "paddingTop": "30",
+                                                "items": [
+                                                    {
+                                                        "id": "HOUSEKEEPING_BUTTON",
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@mainMenuButtonSize",
+                                                        "vectorSource": "m9.6 11 3.3 4.1s-.6 3.8-2.9 5.6C7.7 22.5 0 22 0 22s.1-.9.4-2.1L4 15.7c.1-.2 0-.4-.2-.4l-2.3.8c.5-1.6 1.2-3 2-3.7C5.7 10.7 9.6 11 9.6 11zm14.3-7-.8-.9c-.2-.3-.6-.3-.8-.1l-8.7 6.7-1.3-1.6c-.2-.3-.6-.2-.7 0l-.9 2 3.3 4.1 2.2-.5c.3-.1.4-.4.2-.7l-1.3-1.6 8.7-6.7c.2 0 .3-.4.1-.7z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": "${payload.pageData.event.houseKeepingAction}"
+                                                    },
+                                                    {
+                                                        "text": "Housekeeping",
+                                                        "fontSize": "@mainMenuButtonTextfontSize",
+                                                        "textAlign": "center",
+                                                        "type": "Text",
+                                                        "style": "textStyleBody",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "type": "Container",
+                                        "width": "@mainMenuButtonContainerSize",
+                                        "left": "10"
+                                    },
+                                    {
+                                        "direction": "column",
+                                        "justifyContent": "center",
+                                        "alignItems": "center",
+                                        "position": "relative",
+                                        "items": [
+                                            {
+                                                "direction": "column",
+                                                "justifyContent": "spaceBetween",
+                                                "position": "relative",
+                                                "type": "Container",
+                                                "items": [
+                                                    {
+                                                        "id": "DIRECTORY_BUTTON",
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@mainMenuButtonSize",
+                                                        "vectorSource": "m23.3 16.9-5.2-2.2c-.5-.2-1-.1-1.3.3l-2.3 2.8c-3.7-1.7-6.7-4.6-8.4-8.3L9 7.2c.4-.3.5-.8.3-1.3L7 .7C6.8.2 6.3-.1 5.7 0L.9 1.1c-.5.1-.9.6-.9 1.1C0 14.2 9.7 24 21.8 24c.5 0 1-.4 1.1-.9l1.1-4.9c.1-.5-.2-1.1-.7-1.3z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": "${payload.pageData.event.phoneDirectoryAction}"
+                                                    },
+                                                    {
+                                                        "text": "Directory",
+                                                        "fontSize": "@mainMenuButtonTextfontSize",
+                                                        "textAlign": "center",
+                                                        "type": "Text",
+                                                        "style": "textStyleBody",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "position": "relative",
+                                                "type": "Container",
+                                                "paddingTop": "30",
+                                                "items": [
+                                                    {
+                                                        "id": "CHECKOUT_BUTTON",
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@mainMenuButtonSize",
+                                                        "vectorSource": "M23.4 18.8h-3V6.2c0-1-.8-1.9-1.8-1.9h-4.2v2.4H18v14.4h5.4c.3 0 .6-.3.6-.6v-1.2c0-.3-.3-.5-.6-.5zM11.7 2 4.5 3.9c-.5.1-.9.6-.9 1.2v13.7h-3c-.3 0-.6.2-.6.6v1.2c0 .3.3.6.6.6h12.6v-18c0-.8-.7-1.4-1.5-1.2zM9.9 12.8c-.5 0-.9-.6-.9-1.2s.4-1.2.9-1.2.9.5.9 1.2-.4 1.2-.9 1.2z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": "${payload.pageData.event.checkOutAction}"
+                                                    },
+                                                    {
+                                                        "fontSize": "@mainMenuButtonTextfontSize",
+                                                        "text": "Checkout",
+                                                        "textAlign": "center",
+                                                        "type": "Text",
+                                                        "style": "textStyleBody",
+                                                        "spacing": "@spacingXSmall"
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "type": "Container",
+                                        "width": "@mainMenuButtonContainerSize"
+                                    },
+                                    {
+                                        "direction": "row",
+                                        "wrap": "noWrap",
+                                        "items": [
+                                            {
+                                                "scrollDirection": "horizontal",
+                                                "data": "${payload.pageData.cardLayoutInSequence.itemsToDisplay}",
+                                                "type": "Sequence",
+                                                "height": "100%",
+                                                "width": "100%",
+                                                "paddingStart": "10",
+                                                "paddingTop": "@rightFrameAlexaCardTopPadding",
+                                                "paddingBottom": "30",
+                                                "items": [
+                                                    {
+                                                        "type": "AlexaCard",
+                                                        "cardId": "${data.id}",
+                                                        "theme": "${data.theme}",
+                                                        "imageSource": "${data.imageSource}",
+                                                        "imageCaption": "${data.imageCaption}",
+                                                        "cardBackgroundColor": "${data.color}",
+                                                        "cardRoundedCorner": "true",
+                                                        "headerText": "${data.headerText}",
+                                                        "primaryText": "${data.primaryText}",
+                                                        "secondaryText": "${data.secondaryText}",
+                                                        "tertiaryText": "${data.tertiaryText}",
+                                                        "ratingNumber": "${data.ratingNumber}",
+                                                        "secondaryIconName": "${data.secondaryIconName}",
+                                                        "tertiaryIconName": "${data.tertiaryIconName}",
+                                                        "spacing": "@spacing3XSmall",
+                                                        "shrink": 1,
+                                                        "primaryAction": [
+                                                            {
+                                                                "type": "SendEvent",
+                                                                "arguments": [
+                                                                    "${data.id}",
+                                                                    "${data.facility_type}"
+                                                                ]                                            
+                                                            }
+                                                        ]
+                                                    }
+                                                ]
+                                            }
+                                        ],
+                                        "type": "Container",
+                                        "height": "100%",
+                                        "width": "@rightFrameAlexaCardWidth"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}",
+                        "menuButtonDisplay": "none", 
+                        "exitButtonDisplay": "normal"
+                    }
+                ],
+                "alignItems": "center",
+                "type": "Container",
+                "height": "100%",
+                "width": "100%"
+            }
+        ]
+    }
+}

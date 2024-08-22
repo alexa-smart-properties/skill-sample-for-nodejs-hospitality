@@ -12,5 +12,7 @@ The contents of this repository is broken down into a few sub-folders.
 This subfolder contains a basic skill sample that can be used to set up in an Alexa Smart Properties for Hospitality.  The experience is mostly voice only, with some visual images that are returned with voice responses when it makes sense.
 ### skill-sample-for-nodejs-hospitality-hotelrating
 This subfolder contains a skill sample that implements rating solicitation from hotel guests.  The experience is fully multimodal, with voice and touch capabilities.  It also includes integration with AWS pinpoint for SMS texting to staff mobile number, and an example ASP Proactive Suggestion and Persistent Visual Alert API call that can be deployed to start the hotel rating experience.
+### skill-sample-for-nodejs-hospitality-multimodal
+This subfolder contains a skill sample that implements a fully multimodal (voice and touch) hospitality experience in Alexa Smart Properties.  The sample uses a fictional hotel named Maveri Las Vegas to demonstrate the different hotel functionalities.  The sample skill also includes integration with hotel PBX, SMS texting (for checkout), as well as proactive suggestion and persistent visual alert.
 
 For detailed explanation of each sample and set up instructions, please see the README.md file in each of the subfolders.

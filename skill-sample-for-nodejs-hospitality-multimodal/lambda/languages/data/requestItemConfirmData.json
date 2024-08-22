@@ -1,0 +1,24 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "confirmationTitleText": "Submit the requested room items?",
+        "requestItemsListTitle": "Requested Items:",
+        "yesButtonText": "Yes, submit",
+        "noButtonText": "No, cancel request",
+        "alexa_hints": [
+            "yes",
+            "no",
+            "submit",
+            "make changes",
+            "yes",
+            "no",
+            "submit request",
+            "cancel request"
+        ],
+        "requestItems": []
+    }
+}

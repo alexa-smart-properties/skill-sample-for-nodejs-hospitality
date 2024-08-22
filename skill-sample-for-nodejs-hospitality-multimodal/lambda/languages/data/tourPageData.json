@@ -1,0 +1,54 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "title": "Popular Tours in Your Area",
+        "titleDisplay": "normal",
+        "title2": "Grand Canyon Full Day Tour",
+        "title2Display": "normal",
+        "title3": "",
+        "textContent": "Save yourself the bother of renting a car, and enjoy traveling in an air-conditioned vehicle with a tour guide between dispersed outdoor landmarks, such as the Grand Canyon West, Eagle Point, and the Hoover Dam. Maveri special tour package includes picking up and dropping off at Maveri resort, hoover dam stop, Grand Canyon West viewpoints and Skywalk ticket for $63. Tour pickup is at 7:00 AM at the resort entrance.",
+        "priceText": "From $63 per adult",
+        "priceDisplay": "normal",
+        "buttonDisplay": "normal",
+        "buttonId": "tourbutton",
+        "buttonText": "Book Now",
+        "buttonPrimaryAction": {},
+        "availabilityText": "Likely to sell out",
+        "availabilityDisplay": "normal",
+        "delay": 3800,
+        "duration": 5000,
+        "rightTitleDisplay": "none",
+        "rightPagerDotDisplay": "normal",
+        "onMountRepeatCount": 5,
+        "items": [
+            {
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/tour1.jpg",
+                "scale": "best-fill"
+            },
+            {
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/tour2.jpg",
+                "scale": "best-fill"
+            },
+            {
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/tour3.jpg",
+                "scale": "best-fill"
+            },
+            {
+                "image": "https://d3qvi2egjrw5ks.cloudfront.net/alexaqr.png",
+                "scale": "best-fit"
+            }
+        ],
+        "alexa_hints": [
+            "book this tour.",
+            "book this tour.",
+            "book this tour.",
+            "book this tour.",
+            "book this tour.",
+            "book this tour."
+        ]
+    }
+}

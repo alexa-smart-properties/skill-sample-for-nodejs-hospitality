@@ -1,0 +1,94 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "title": "<u>Hotel Directory</u>",
+        "items": [
+            {
+                "name": "Ball Room",
+                "number": "3004"
+            },
+            {
+                "name": "Business Center",
+                "number": "4000"
+            },
+            {
+                "name": "Concierge",
+                "number": "3002"
+            },
+            {
+                "name": "Conference Center",
+                "number": "3003"
+            },
+            {
+                "name": "Emergency Help",
+                "number": "911"
+            },
+            {
+                "name": "Frontdesk",
+                "number": "9000"
+            },
+            {
+                "name": "Gift Shop",
+                "number": "3005"
+            },
+            {
+                "name": "Gourmet Grove",
+                "number": "3006"
+            },
+            {
+                "name": "Gym",
+                "number": "3007"
+            },
+            {
+                "name": "Horizon Haven Bar",
+                "number": "3008"
+            },
+            {
+                "name": "House keeping",
+                "number": "3000"
+            },
+            {
+                "name": "Lobby Cafe",
+                "number": "3009"
+            },
+            {
+                "name": "Maintenance",
+                "number": "3010"
+            },
+            {
+                "name": "Room Service",
+                "number": "3011"
+            },
+            {
+                "name": "Sunrise Spa",
+                "number": "3012"
+            },
+            {
+                "name": "Valet and Bellhop",
+                "number": "3013"
+            }
+        ],
+        "alexa_hints": [
+            "Tap a button to call, or say 'Alexa, call Ball Room.'",
+            "Tap a button to call. or say 'Alexa, call Business Center.'",
+            "Tap a button to call. or say 'Alexa, call Concierge.'",
+            "Tap a button to call. or say 'Alexa, call Conference Center.'",
+            "Tap a button to call. or say 'Alexa, call Emergency Help.'",
+            "Tap a button to call. or say 'Alexa, call Front Desk.'",
+            "Tap a button to call. or say 'Alexa, call Gift Shop.'",
+            "Tap a button to call. or say 'Alexa, call Gourmet Grove.'",
+            "Tap a button to call. or say 'Alexa, call Gym.'",
+            "Tap a button to call. or say 'Alexa, call Horizon Haven.'",
+            "Tap a button to call. or say 'Alexa, call House Keeping.'",
+            "Tap a button to call. or say 'Alexa, call Lobby Cafe.'",
+            "Tap a button to call. or say 'Alexa, call Maintenance.'",
+            "Tap a button to call. or say 'Alexa, call Room Service.'",
+            "Tap a button to call. or say 'Alexa, call Sunrise Spa.'",
+            "Tap a button to call. or say 'Alexa, call Valet and Bellhop.'"
+        ]
+    }
+}

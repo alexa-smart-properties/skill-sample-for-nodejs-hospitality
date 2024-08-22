@@ -105,7 +105,7 @@ The skill sample uses AWS Pinpoint to send SMS text messages when guest rating i
 
 Use [ASK CLI commands](https://developer.amazon.com/en-US/docs/alexa/smapi/ask-cli-command-reference.html) to deploy your new skill to your developer portal account.
 
-By the end of this Step, you would have a skill created under your developer.amazon.com account and see this message:  Skill package deployed and all models built successfully.
+By the end of this step, you would have a skill created under your developer.amazon.com account and see this message: Skill package deployed and all models built successfully.
 
  - In the terminal/PowerShell window, from the root folder of the downloaded sample, type the following to deploy the skill:
 
@@ -118,21 +118,21 @@ By the end of this Step, you would have a skill created under your developer.ama
  NOTE: if you are using Microsoft windows, there is an issue with ASK CLI running on Windows where the produced Lambda code package won't have its dependency working properly.  To work around this, please do the following:
 
 - Open an explorer window, navigate to the root folder of the downloaded sample that you deployed.
-- navigate into the .ask folder, and then navigate into the lambda folder, now delete build.zip that is in the folder
-- select all of the files that are in the lambda folder, right click in the window and select 'Compress to zip file'
-- in a web browser, navigate to aws.amazon.com, then, log into your AWS account
-- search for Lambda in the services search box, and click the found 'Lambda' result to go to the Lambda functions dashboard
-- find the generated Lambda function for the deployed skill (in the format ask-ratemystay-default-default-XXXX) and click to view the settings
-- click 'Upload from' drop down on the right, and select '.Zip file', in the dialog that shows up, click 'Upload', and select the compressed zip file you generated in the .ask folder, click 'save'
-- wait until the zip file is uploaded successfully (you will see a green banner on the top)
-- now the Lambda function is working properly.
+- Navigate into the .ask folder, and then navigate into the lambda folder, now delete build.zip that is in the folder
+- Select all of the files that are in the lambda folder, right click in the window and select 'Compress to zip file'
+- In a web browser, navigate to aws.amazon.com, then, log into your AWS account
+- Search for Lambda in the services search box, and click the found 'Lambda' result to go to the Lambda functions dashboard
+- Find the generated Lambda function for the deployed skill (in the format ask-ratemystay-default-default-XXXX) and click to view the settings
+- Click 'Upload from' drop down on the right, and select '.Zip file', in the dialog that shows up, click 'Upload', and select the compressed zip file you generated in the .ask folder, click 'save'
+- Wait until the zip file is uploaded successfully (you will see a success status green banner on the top)
+- Now the Lambda function is working properly.
   
 
 ### Step 4: Try the deployed skill under your developer portal account.
 
  - In a web browser, navigate to https://developer.amazon.com/alexa/console/ask, click the 'Rate my stay' skill to view the details. Then, click the 'Test' Tab near the top. You will see that Skill is enabled in 'Development' stage (the only option you can choose).
 
- - Start the skill sample by typing '**open rate my stay**' in the dialog box in the Alexa simulator on the left to check out the custom skill experience. You can either:
+ - Start the skill sample by typing '**open rate my stay**' in the dialog box in the Alexa simulator on the left to check out the custom skill experience. You can:
 
  - Click the five star graphic, or type '**five stars**' to rate five stars, and see the response
 
@@ -190,9 +190,9 @@ In this step, we will install Postman (an API builder/tester application) and im
 | Variable Name | Value  |
 |--|--------|
 | Host | The value for the variable should be **api.amazonalexa.com** |
-| SkillId | The value should be set to the skill id of your deployed sample skill you noted down in step 2 earlier in the setup instructions |
-| UnitId | The value should be set to the unit id of the ASP room you noted down where you enabled the sample skill and associated your echo show device to earlier in step 4 in the setup instructions.|
-| StartDateTime | The value is used for the proactive suggestions API call, It specifies the date/time when the proactive suggestion will start showing on the Echo Show device. Set this to sometime in the past, so that the proactive suggestion will show immediately. The datetime string uses UTC time format, e.g.  '2023-12-20T13:00:46.90Z'.|
+| SkillId | The value should be set to the skill id of your deployed sample skill you noted down in step 2 earlier in the setup instructions. |
+| UnitId | The value should be set to the unit id of the ASP room you noted down where you enabled the sample skill and associated your Echo show device to earlier in step 4 in the setup instructions. |
+| StartDateTime | The value is used for the proactive suggestions API call. It specifies the date/time when the proactive suggestion will start showing on the Echo Show device. Set this to sometime in the past, so that the proactive suggestion will show immediately. The datetime string uses UTC time format, e.g.  '2023-12-20T13:00:46.90Z'.|
 | EndDateTime | The value is used by the proactive suggestions API call, It specifies date/time when the proactive suggestion will expire, Set this to sometime in the future so the content will show on the device. The datetime string uses UTC time format, e.g.'2024-12-20T13:00:00.00Z'.|
 
 #### Configuring the Authorization method for the API calls
@@ -237,7 +237,7 @@ In this step, we will install Postman (an API builder/tester application) and im
 
 - After verifying that you have a successful HTTP response, wait between 1-20 minutes for the proactive suggestion card to show on the device in the ASP room. If you would like it to show up faster, you can reboot the device. Upon reboot, you should see Hotel Rating card showing on the device home screen.
 
-- Tap the text portion of the card, and the Rate My Stay skill should launch to allow you to rate the stay as before.
+- Tap the text portion of the card, and the Rate My Stay skill will launch to allow you to rate the stay as before.
 
 ##### For Persistent Visual Alert:
 

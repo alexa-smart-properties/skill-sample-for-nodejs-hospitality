@@ -1,0 +1,351 @@
+{
+    "type": "APL",
+    "version": "2024.1",
+    "license": "Copyright 2024 Amazon.com, Inc. or its affiliates. All Rights Reserved.\nSPDX-License-Identifier: LicenseRef-.amazon.com.-AmznSL-1.0\nLicensed under the Amazon Software License  http://aws.amazon.com/asl/",    
+    "settings": {
+        "idleTimeout": 300000
+    },
+    "theme": "dark",
+    "import": [
+        {
+            "name": "alexa-layouts",
+            "version": "1.7.0"
+        },
+        {
+            "name": "alexa-icon",
+            "version": "1.0.0"
+        },
+        {
+            "name": "asp-hotel-layout",
+            "version": "1.0.0",
+            "source": "https://d3qvi2egjrw5ks.cloudfront.net/asp-hotel-layouts.json"
+        }
+    ],
+    "resources": [],
+    "styles": {},
+    "onMount": [
+        {
+            "type": "TotalOrders"
+        }
+    ],
+    "graphics": {},
+    "commands": {
+        "TotalOrders": {
+            "commands": [
+                {
+                    "type": "SetValue",
+                    "componentId": ":root",
+                    "property": "amenitiesTotal",
+                    "value": 0
+                },
+                {
+                    "type": "Sequential",
+                    "data": "${amenitiesAmounts}",
+                    "commands": [
+                        {
+                            "when": "${index % 2 == 1}",
+                            "type": "SetValue",
+                            "componentId": ":root",
+                            "property": "amenitiesTotal",
+                            "value": "${amenitiesTotal + data}"
+                        }
+                    ]
+                }
+            ]
+        },
+        "ResetOrders": {
+            "commands": [
+                {
+                    "type": "SetValue",
+                    "componentId": ":root",
+                    "property": "amenitiesAmounts",
+                    "value": []
+                },
+                {
+                    "type": "TotalOrders"
+                }
+            ]
+        },
+        "SetOrder": {
+            "parameters": [
+                {
+                    "name": "propertyName",
+                    "default": ""
+                },
+                {
+                    "name": "propertyIndex",
+                    "default": "${Array.indexOf(amenitiesAmounts, data.propertyName)}"
+                },
+                {
+                    "name": "amount",
+                    "default": 0
+                },
+                {
+                    "name": "total",
+                    "default": "${propertyIndex >= 0 ? amenitiesAmounts[propertyIndex+1] + amount : amount}"
+                },
+                {
+                    "name": "maxTotal",
+                    "default": 9
+                }
+            ],
+            "commands": [
+                {
+                    "type": "Select",
+                    "commands": [
+                        {
+                            "when": "${propertyIndex < 0}",
+                            "type": "SetValue",
+                            "componentId": ":root",
+                            "property": "amenitiesAmounts",
+                            "value": [
+                                "${amenitiesAmounts}",
+                                "${propertyName}",
+                                "${Math.min(maxTotal, Math.max(0, total))}"
+                            ]
+                        },
+                        {
+                            "when": "${total <= 0}",
+                            "type": "SetValue",
+                            "componentId": ":root",
+                            "property": "amenitiesAmounts",
+                            "value": [
+                                "${Array.slice(amenitiesAmounts, 0, propertyIndex)}",
+                                "${Array.slice(amenitiesAmounts, propertyIndex+2)}"
+                            ]
+                        },
+                        {
+                            "type": "SetValue",
+                            "componentId": ":root",
+                            "property": "amenitiesAmounts",
+                            "value": [
+                                "${Array.slice(amenitiesAmounts, 0, propertyIndex+1)}",
+                                "${Math.min(maxTotal, Math.max(0, total))}",
+                                "${Array.slice(amenitiesAmounts, propertyIndex+2)}"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "TotalOrders"
+                }
+            ]
+        }
+    },
+    "layouts": {},
+    "mainTemplate": {
+        "parameters": [
+            "payload"
+        ],
+        "bind": [
+            {
+                "name": "amenitiesAmounts",
+                "value": "${payload.pageData.defaultAmounts}"
+            },
+            {
+                "name": "amenitiesTotal",
+                "value": 0
+            }
+        ],
+        "items": [
+            {
+                "type": "Container",
+                "width": "100vw",
+                "height": "100vh",
+                "items": [
+                    {
+                        "type": "AlexaBackground",
+                        "backgroundImageSource": "${payload.pageData.backgroundImageSource}"
+                    },
+                    {
+                        "type": "hotelHeader",
+                        "clockDisplay": "normal",
+                        "headerPrimaryText": "${payload.pageData.headerPrimaryText}",
+                        "headerSecondaryText": "${payload.pageData.headerSecondaryText}",
+                        "dividerImageSource": "${payload.pageData.dividerImageSource}",
+                        "logoUrl": "${payload.pageData.logoUrl}"            
+                    },
+                    {
+                        "alignItems": "stretch",
+                        "direction": "column",
+                        "justifyContent": "spaceAround",
+                        "grow": 1,
+                        "shrink": 1,
+                        "type": "Container",
+                        "paddingLeft": "@amentiyContentPadding",
+                        "paddingRight": "@amentiyContentPadding",
+                        "id": "listItemContainer",
+                        "items": [
+                            {
+                                "alignItems": "center",
+                                "direction": "row",
+                                "items": [
+                                    {
+                                        "fontSize": "@leftFrameListTitleFontSize",
+                                        "text": "Room Items Request",
+                                        "textAlign": "left",
+                                        "fontWeight": "normal",
+                                        "textAlignVertical": "center",
+                                        "type": "Text",
+                                        "height": "100%",
+                                        "grow": 1,
+                                        "shrink": 1
+                                    },
+                                    {
+                                        "textAlign": "right",
+                                        "textAlignVertical": "center",
+                                        "fontSize": "@leftFrameListTitleFontSize",
+                                        "text": "Total: ${amenitiesTotal}",
+                                        "type": "Text",
+                                        "height": "100%"
+                                    },
+                                    {
+                                        "type": "AlexaIconButton",
+                                        "vectorSource": "M20 4C20 4.552 19.552 5 19 5H5C4.448 5 4 4.552 4 4C4 3.448 4.448 3 5 3H10C10 2.448 10.448 2 11 2H13C13.552 2 14 2.448 14 3H19C19.552 3 20 3.448 20 4ZM5 6H19L18 21.117C17.938 22.175 17.059 23 16 23H8C6.941 23 6.062 22.175 6 21.117L5 6ZM15 17C14.725 17 14.5 16.775 14.5 16.5V9.5C14.5 9.225 14.725 9 15 9C15.275 9 15.5 9.225 15.5 9.5V16.5C15.5 16.775 15.275 17 15 17ZM11.5 16.5C11.5 16.775 11.725 17 12 17C12.275 17 12.5 16.775 12.5 16.5V9.5C12.5 9.225 12.275 9 12 9C11.725 9 11.5 9.225 11.5 9.5V16.5ZM9 17C8.725 17 8.5 16.775 8.5 16.5V9.5C8.5 9.225 8.725 9 9 9C9.275 9 9.5 9.225 9.5 9.5V16.5C9.5 16.775 9.275 17 9 17Z",
+                                        "spacing": "20dp",
+                                        "buttonId": "DELETE_ALL_BUTTON",
+                                        "primaryAction": [
+                                            {
+                                                "type": "ResetOrders"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "justifyContent": "spaceAround",
+                                "type": "Container"
+                            },
+                            {
+                                "type": "AlexaDivider",
+                                "dividerDirection": "horizontal"
+                            },
+                            {
+                                "scrollDirection": "vertical",
+                                "snap": "start",
+                                "items": [
+                                    {
+                                        "direction": "column",
+                                        "alignItems": "stretch",
+                                        "justifyContent": "spaceEvenly",
+                                        "numbered": true,
+                                        "type": "Container",
+                                        "items": [
+                                            {
+                                                "direction": "row",
+                                                "alignItems": "center",
+                                                "justifyContent": "spaceEvenly",
+                                                "bind": [
+                                                    {
+                                                        "name": "propertyIndex",
+                                                        "value": "${Array.indexOf(amenitiesAmounts, data.propertyName)}"
+                                                    }
+                                                ],
+                                                "items": [
+                                                    {
+                                                        "source": "${data.image}",
+                                                        "scale": "best-fill",
+                                                        "type": "Image",
+                                                        "height": "85%"
+                                                    },
+                                                    {
+                                                        "text": "${data.content}",
+                                                        "fontSize": "@leftFrameListItemFontSize",
+                                                        "type": "Text",
+                                                        "width": "@listItemMaxWidth",
+                                                        "spacing": "@amentiyContentPadding"
+                                                    },
+                                                    {
+                                                        "alignItems": "center",
+                                                        "direction": "row",
+                                                        "grow": 1,
+                                                        "shrink": 1,
+                                                        "justifyContent": "center",
+                                                        "type": "Container",
+                                                        "width": "@listItemMaxWidth",
+                                                        "items": [
+                                                            {
+                                                                "type": "AlexaIconButton",
+                                                                "buttonId": "incrementButton",
+                                                                "buttonSize": "@footerButtonSize",
+                                                                "vectorSource": "M21 11H13V3C13 2.448 12.552 2 12 2C11.448 2 11 2.448 11 3V11H3C2.448 11 2 11.448 2 12C2 12.552 2.448 13 3 13H11V21C11 21.553 11.448 22 12 22C12.552 22 13 21.553 13 21V13H21C21.552 13 22 12.552 22 12C22 11.448 21.552 11 21 11Z",
+                                                                "primaryAction": [
+                                                                    {
+                                                                        "type": "SetOrder",
+                                                                        "propertyName": "${data.propertyName}",
+                                                                        "amount": 1
+                                                                    }
+                                                                ]
+                                                            },
+                                                            {
+                                                                "text": "${propertyIndex >= 0 ? amenitiesAmounts[propertyIndex+1] : 0}",
+                                                                "textAlign": "center",
+                                                                "fontSize": "@leftFrameListItemFontSize",
+                                                                "textAlignVertical": "center",
+                                                                "type": "Text",
+                                                                "id": "amountText"
+                                                            },
+                                                            {
+                                                                "type": "AlexaIconButton",
+                                                                "buttonId": "decrementButton",
+                                                                "buttonSize": "@footerButtonSize",
+                                                                "vectorSource": "M21 13H3C2.448 13 2 12.552 2 12C2 11.448 2.448 11 3 11H21C21.552 11 22 11.448 22 12C22 12.552 21.552 13 21 13Z",
+                                                                "primaryAction": [
+                                                                    {
+                                                                        "type": "SetOrder",
+                                                                        "propertyName": "${data.propertyName}",
+                                                                        "amount": -1
+                                                                    }
+                                                                ]
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "type": "AlexaIconButton",
+                                                        "buttonSize": "@footerButtonSize",
+                                                        "vectorSource": "M19.0711 17.657L13.4141 12L19.0711 6.343C19.4611 5.953 19.4611 5.319 19.0711 4.929C18.6811 4.539 18.0471 4.539 17.6571 4.929L12.0001 10.586L6.34311 4.929C5.95311 4.539 5.31911 4.539 4.92911 4.929C4.53911 5.319 4.53911 5.953 4.92911 6.343L10.5861 12L4.92911 17.657C4.53811 18.048 4.53911 18.681 4.92911 19.071C5.31911 19.461 5.95211 19.462 6.34311 19.071L12.0001 13.414L17.6571 19.071C18.0471 19.461 18.6811 19.461 19.0711 19.071C19.4611 18.681 19.4621 18.047 19.0711 17.657Z",
+                                                        "buttonStyle": "contained",
+                                                        "primaryAction": [
+                                                            {
+                                                                "type": "SetOrder",
+                                                                "propertyName": "${data.propertyName}",
+                                                                "total": 0
+                                                            }
+                                                        ]
+                                                    }
+                                                ],
+                                                "type": "Container",
+                                                "height": "@listItemMaxHeight",
+                                                "width": "100%",
+                                                "paddingTop": "@amentiyContentItemPadding",
+                                                "paddingBottom": "@amentiyContentItemPadding",
+                                                "paddingLeft": "@amentiyContentPadding",
+                                                "paddingRight": "@amentiyContentPadding"
+                                            },
+                                            {
+                                                "type": "AlexaDivider",
+                                                "dividerDirection": "horizontal"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "numbered": true,
+                                "type": "Sequence",
+                                "id": "amenityItemList",
+                                "data": "${payload.pageData.items}",
+                                "grow": 1
+                            },
+                            {
+                                "type": "AlexaDivider"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "hotelFooter",
+                        "hintTextArray": "${payload.pageData.alexa_hints}",
+                        "requstSubmitButtonDisplay": "normal",
+                        "wifiButtonDisplay": "none"
+                    }
+                ]
+            }
+        ]
+    }
+}

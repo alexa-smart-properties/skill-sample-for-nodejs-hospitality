@@ -1,0 +1,79 @@
+{
+    "pageData": {
+        "type": "object",
+        "properties": {
+            "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+            "headerPrimaryText": "Welcome, guest!",
+            "headerSecondaryText": "Room 808",
+            "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+            "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",    
+            "textContent": "Default content to be replaced.",
+            "playControlDisplay": "none",
+            "actionButtonDisplay": "normal",
+            "actionButtonText": "Buy tickets",
+            "actionButtonPrimaryAction": [ 
+                {
+                    "type": "SendEvent",
+                    "arguments": [
+                        "actionButton"
+                    ],
+                    "flags": {
+                        "interactionMode": "STANDARD"
+                    }
+                }
+            ],
+            "alexa_hints": [
+                "buy tickets.",
+                "buy tickets.",
+                "buy tickets.",
+                "buy tickets.",
+                "buy tickets.",
+                "buy tickets."
+            ],    
+            "skillResponseOutput": "Default skill response speech to be replaced",
+            "videoSource": "https://d3qvi2egjrw5ks.cloudfront.net/sphere.mp4",
+            "videoRepeatCount": 3,
+            "videoAudioTrack": "none",
+            "videoOnEnd": [
+                {
+                    "type": "SendEvent",
+                    "arguments": [
+                        "mainmenu"
+                    ],
+                    "flags": {
+                        "interactionMode": "STANDARD"
+                    }
+                }
+            ],
+            "onMount": [
+                {
+                    "type": "Parallel",
+                    "commands": [                
+                        {
+                            "type": "SetValue",
+                            "componentId": "videoSpokenText",
+                            "property": "display",
+                            "value": "none"
+                        },
+                        {
+                            "type": "SetValue",
+                            "componentId": "VIDEO_PLAYER",
+                            "property": "display",
+                            "value": "normal"
+                        },
+                        {
+                            "type": "ControlMedia",
+                            "componentId": "VIDEO_PLAYER",
+                            "command": "play"
+                        }
+                    ]
+                }
+            ]
+        },
+        "transformers": [ {
+            "inputPath": "skillResponseOutput",
+            "outputName": "skillSpeechOutput",
+            "transformer": "ssmlToSpeech"
+        } ]
+    }
+}

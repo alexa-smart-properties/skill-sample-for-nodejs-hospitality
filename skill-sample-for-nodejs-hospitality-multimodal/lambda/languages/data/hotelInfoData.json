@@ -1,0 +1,130 @@
+{
+    "pageData": {
+        "backgroundImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/MainMenuBackground.png",
+        "headerPrimaryText": "Welcome, guest!",
+        "headerSecondaryText": "Room 808",
+        "dividerImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/divider.png",
+        "logoUrl": "https://d3qvi2egjrw5ks.cloudfront.net/HotelLogo_White.png",
+        "alexa_hints": [
+            "what's the wi-fi password?",
+            "call the front desk.",
+            "tell me about the restaurant.",
+            "when does the bar open?",
+            "I need more towels.",
+            "set alarm for 6 AM.",
+            "I want to checkout."
+        ],
+        "hotelInfoListData": {
+            "listInfo": [
+                {
+                    "primaryText": "Restaurant",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/restaurant.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/restaurant2.jpg",
+                    "title": "Gourmet Grove",
+                    "location": "15th floor",
+                    "hours": "Open Daily. 6 AM to 10 PM",
+                    "features": "The culinary team in our on-site restaurant, Gourmet Grove Bistro, believes that today's dining experience involves connecting with the human senses.  Our philosophy is driven by focusing on fresh and local. We then utilize techniques that elevate all dish flavors.  Reservation is strongly recommended."
+                },
+                {
+                    "primaryText": "Bar",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Bar.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Bar2.jpg",
+                    "title": "Horizon Haven",
+                    "location": "Hotel lobby",
+                    "hours": "Open Daily. 12 PM to 11 PM",
+                    "features": "Unwind after a day of sightseeing or outdoor activities at our lounge, Horizon Haven Bar.  Enjoy a local brew or a sophisticated cocktail while you soak in the Las Vegas city lights."
+                },
+                {
+                    "primaryText": "Gym",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/gym.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Gym2.jpg",
+                    "title": "Gym",
+                    "location": "5th floor",
+                    "hours": "Open Daily. 6 AM to 10 PM",
+                    "features": "Never miss a beat in your fitness routine.  Get into your groove in our fitness center with a variety of cardio machines, strength training equipment including kettlebells and free weights, and an open yoga studio.  Relax your muscles after a hard workout in our sauna. Your hotel keycard is required for access."
+                },
+                {
+                    "primaryText": "Pool",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/pool.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Pool2.jpg",
+                    "title": "Pool",
+                    "location": "12th floor",
+                    "hours": "Open Daily. 6 AM to 8 PM",
+                    "features": "Dive into our naturally treated, saline lap indoor POOL, where you can combine invigorating exercise with relaxing views of  city lights. The warm saline induces muscle relaxation while you unwind after a workout or a walk along the waterfront."
+                },
+                {
+                    "primaryText": "Business",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/BusinessCenter.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/BusinessCenter2.jpg",
+                    "title": "Business Center",
+                    "location": "3rd floor",
+                    "hours": "Open Daily. 12 PM to 11 PM",
+                    "features": "The business center offers a variety of services while you are staying with us, from computer internet access, facsimile, printing, and photocopying services.  You will need your hotel keycard to use the business center."
+                },
+                {
+                    "primaryText": "Conference",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/ConferenceRoom.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/ConferenceRoom2.jpg",
+                    "title": "Conference Center",
+                    "location": "3rd floor",
+                    "hours": "Open Daily. 8 AM to 10 PM",
+                    "features": "Our hotel location make us the optimal destination to enjoy work and play.  We offer welcoming venues with floor to ceiling city views, and an abundant amount of natural light.  Our expert planners and audiovisual crew are also onsite to help you plan your events.  Advanced reservation is required."
+                },
+                {
+                    "primaryText": "Cafe",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Cafe.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Cafe2.jpg",
+                    "title": "Cafe",
+                    "location": "Hotel lobby",
+                    "hours": "Open Daily. 5 AM to 6 PM",
+                    "features": "The cafe near our lounge area offers a selection of handcrafted coffee, or uncaffeinated beverages as well as delectable baked goods and breakfast items.  Take them as you go about your day, or enjoy your breakfast in our CAFE.  No reservation is necessary."
+                },
+                {
+                    "primaryText": "Shop",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/GiftShop.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/GiftShop2.jpg",
+                    "title": "Gift Shop",
+                    "location": "2nd floor",
+                    "hours": "Open Daily. 9 AM to 8 PM",
+                    "features": "Visit our on-site shop to find gifts and sourvenirs for your loved ones who were not able to travel with you.  Credit card payment is accepted."
+                },
+                {
+                    "primaryText": "Ballroom",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Ballroom.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Ballroom2.jpg",
+                    "title": "Ballroom",
+                    "location": "3rd floor",
+                    "hours": "Available for Reservations",
+                    "features": "Get ready to celebrate at our hotel.  Step into our elegant and transformative ballroom, providing the perfect chandeliers and backdrop for any occassion, or become a part of the city with our ballroom foyer floor to ceiling windows.  Advance reservation is required."
+                },
+                {
+                    "primaryText": "Concierge",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/concierge.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/concierge2.jpg",
+                    "title": "Concierge",
+                    "location": "Hotel lobby",
+                    "hours": "Open Daily. 8 AM to 8 PM",
+                    "features": "Not sure what to do while staying in our city, visit or call our front desk concerige.  Our friendly expert staff will help you figure out what you want to do, where you want to go, and what you would want to eat aroudn the city."
+                },
+                {
+                    "primaryText": "Spa",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Spa.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/Spa2.jpg",
+                    "title": "Sunrise Spa",
+                    "location": "5th floor",
+                    "hours": "Open Daily. 8 AM to 8 PM",
+                    "features": "Explore the eco-friendly massage and body treatments at the Sunrise Spa. Our commitment to minimize impact on the Earth begins by using organic products in every treatment. Our expert spa therapists will tailor treatments to fit your specific needs. Reservation is recommended."
+                },
+                {
+                    "primaryText": "Happy hour",
+                    "imageSource": "https://d3qvi2egjrw5ks.cloudfront.net/HappyHour.jpg",
+                    "detailsImageSource": "https://d3qvi2egjrw5ks.cloudfront.net/HappyHour2.jpg",
+                    "title": "Happy Hour",
+                    "location": "Hotel lobby",
+                    "hours": "Starts Daily. 4 PM to 6 PM",
+                    "features": "The hotel hosts a happier happy hour at on-site bar, Horizon Haven from 4 PM to 6 PM.  Join in on the fun with our daily happy hour trivia contests, and half priced drinks and appetizers!"
+                }
+            ]
+        }
+    }
+}
