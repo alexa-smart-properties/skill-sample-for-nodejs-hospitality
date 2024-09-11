@@ -61,18 +61,6 @@ module.exports = {
         return false;
     },
 
-    getS3PreSignedUrl(s3ObjectKey) {
-
-        const bucketName = config.S3_BUCKET;
-        const s3PreSignedUrl = s3SigV4Client.getSignedUrl('getObject', {
-            Bucket: bucketName,
-            Key: s3ObjectKey,
-            Expires: 60*4 // the Expires is capped for 1 minute
-        });
-        console.log(`Util.s3PreSignedUrl: ${s3ObjectKey} URL ${s3PreSignedUrl}`);
-        return s3PreSignedUrl
-    },
-    
     /**
      * Returns the target intent 
      * 

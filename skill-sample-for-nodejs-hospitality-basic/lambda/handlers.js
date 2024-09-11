@@ -42,10 +42,10 @@ module.exports = {
                     document: template.document,
                     datasources: {
                         "headlineTemplateData": {
-                            "backgroundImage": util.getS3PreSignedUrl(constants.IMAGES.LOBBY),
+                            "backgroundImage": constants.IMAGES.LOBBY,
                             "text": "Welcome to the \nAlexa Smart Properties Hotel",
                             "sub": " ",
-                            "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                            "logoUrl": constants.IMAGES.LOGO,
                             "hintText": "Try, \"Alexa, where is the pool?\""
                         }
                     }
@@ -87,10 +87,10 @@ module.exports = {
                     document: template.document,
                     datasources: {
                         "headlineTemplateData": {
-                            "backgroundImage": util.getS3PreSignedUrl(constants.IMAGES.LOBBY),
+                            "backgroundImage": constants.IMAGES.LOBBY,
                             "text": "Welcome to the Alexa Smart Properties Hotel",
                             "sub": " ",
-                            "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                            "logoUrl": constants.IMAGES.LOGO,
                             "hintText": "Try, \"Alexa, where is the pool?\""
                         }
                     }
@@ -171,10 +171,10 @@ module.exports = {
                     document: template.document,
                     datasources: {
                         "headlineTemplateData": {
-                            "backgroundImage": util.getS3PreSignedUrl(constants.IMAGES.LOBBY),
+                            "backgroundImage": constants.IMAGES.LOBBY,
                             "text": "Welcome to the Alexa Smart Properties Hotel",
                             "sub": " ",
-                            "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                            "logoUrl": constants.IMAGES.LOGO,
                             "hintText": "Try, \"Alexa, where is the pool?\""
                         }
                     }

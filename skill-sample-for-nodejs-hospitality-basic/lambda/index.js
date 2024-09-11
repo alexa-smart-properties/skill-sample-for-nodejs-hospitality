@@ -116,13 +116,11 @@ exports.handler = Alexa.SkillBuilders.custom()
         customIntentsHandlers.GeneralRoomServiceIntentHandler,
         customIntentsHandlers.HotelInformationIntentHandler,
         customIntentsHandlers.InRoomFoodRequestIntentHandler,
-		customIntentsHandlers.PINValidationIntentHandler,       
         customIntentsHandlers.PropertyFeatureLocationIntentHandler,
         customIntentsHandlers.PropertyFeatureOperatingHoursIntentHandler,
         customIntentsHandlers.RoomCleaningRequestIntentHandler,
         customIntentsHandlers.RoomCleaningCancelIntentHandler,
         customIntentsHandlers.RoomDeliverableRequestIntentHandler,
-		customIntentsHandlers.RoomTurnOverRequestIntentHandler,
         customIntentsHandlers.WifiAccessQAIntentHandler,
         customIntentsHandlers.WifiAccessFreeIntentHandler,
 

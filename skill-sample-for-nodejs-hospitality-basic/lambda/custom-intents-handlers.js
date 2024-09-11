@@ -84,10 +84,10 @@ function intentHandlerInterfaceWithAPL(handlerInput, intentName, outputPromptNam
             document: template.document,
             datasources: {
                 "headlineTemplateData": {
-                    "backgroundImage": util.getS3PreSignedUrl(constants.IMAGES.LOBBY),
+                    "backgroundImage": constants.IMAGES.LOBBY,
                     "text": `${requestAttributes.t(aplPromptName)} `,
                     "sub": " ",
-                    "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                    "logoUrl": constants.IMAGES.LOGO,
                     "hintText": "Try, \"Alexa, where is the concierge?\""
                 }
             }
@@ -283,10 +283,10 @@ module.exports = {
                     document: template.document,
                     datasources: {
                         "headlineTemplateData": {
-                            "backgroundImage": util.getS3PreSignedUrl(details.image),
+                            "backgroundImage": details.image,
                             "text": details.text,
                             "sub": details.hours,
-                            "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                            "logoUrl": constants.IMAGES.LOGO,
                             "hintText": details.hintText
                         }
                     }
@@ -338,10 +338,10 @@ module.exports = {
                     document: template.document,
                     datasources: {
                         "headlineTemplateData": {
-                            "backgroundImage": util.getS3PreSignedUrl(details.image),
+                            "backgroundImage": details.image,
                             "text": details.text,
                             "sub": details.hours,
-                            "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                            "logoUrl": constants.IMAGES.LOGO,
                             "hintText": details.hintText
                         }
                     }
@@ -393,10 +393,10 @@ module.exports = {
                     document: template.document,
                     datasources: {
                         "headlineTemplateData": {
-                            "backgroundImage": util.getS3PreSignedUrl(details.image),
+                            "backgroundImage": details.image,
                             "text": details.text,
                             "sub": details.hours,
-                            "logoUrl": util.getS3PreSignedUrl(constants.IMAGES.LOGO),
+                            "logoUrl": constants.IMAGES.LOGO,
                             "hintText": details.hintText
                         }
                     }
@@ -414,75 +414,5 @@ module.exports = {
             .speak(speakOutput)
             .getResponse();
         }
-    },
-	
-    /**
-     * Handler for room turn over requests which can be invoked by hotel staff. PIN should be retrieved from the secure location and should not be hardcoded.
-     * Pin validation can be replaced with 2FA because this particular intent is supposed to be for back-of-house (housekeeping) use only, it needs to be 
-     * protected so that others like the roomguest cannot use/abuse this
-     */
-	RoomTurnOverRequestIntentHandler: {
-	  canHandle(handlerInput) {
-		return util.parseIntent(handlerInput) === 'RoomTurnOverIntent';
-	  },
-	  async handle(handlerInput) { 
-		const { attributesManager, responseBuilder } = handlerInput;
-		const requestAttributes = attributesManager.getRequestAttributes();
-		let sessionAttributes = attributesManager.getSessionAttributes();
-
-		console.info(`${sessionAttributes[constants.STATE]}, RoomTurnOver`);
-		let repromptOutput = `${requestAttributes.t('PIN_REQUEST_REPROMPT')} `;
-		let speakOutput = `${requestAttributes.t('PIN_REQUEST')} `;
-
-        const pin = (Math.floor(1000 + Math.random() * 9000));//randomly generate the pin
-        //TO DO: Securely share this pin user over notification, email or sms
-
-		// Save the PIN in session attributes for validation considering session variables are securely stored
-		sessionAttributes.pin = pin;
-	   
-		// Set the delegate directive to elicit the PIN from the user
-		responseBuilder
-		  .speak(speakOutput)
-		  .reprompt(repromptOutput)
-		  .addElicitSlotDirective('mypin')
-          .withShouldEndSession(false);
-		  
-		return responseBuilder
-            .getResponse();
-	  }
-	},
-
-    /**
-     * Handler for pin validation request from the RoomTurnOverRequestIntentHandler 
-     */
-	PINValidationIntentHandler: {
-	  canHandle(handlerInput) {
-		return util.parseIntent(handlerInput) === 'PINValidationIntent';
-	  },
-	  handle(handlerInput) {
-		const { attributesManager, responseBuilder } = handlerInput;
-		const requestAttributes = attributesManager.getRequestAttributes();
-		let sessionAttributes = attributesManager.getSessionAttributes();
-
-		console.info(`${sessionAttributes[constants.STATE]}, PINValidation`);
-		const userPIN = parseInt(util.getSlotResolution(handlerInput, 'mypin'));
-		const savedPIN = sessionAttributes.pin;
-		let speakOutput = '';
-		console.log(`savedPIN is ${savedPIN}`);
-		console.log(`userPIN is ${userPIN}`);
-
-        //validate the pin and share the result with the staff and logic for room turnover automation(to do) can be triggered 
-		if (savedPIN && (userPIN === savedPIN)) {
-		  speakOutput = `${requestAttributes.t('PIN_VALIDATED')}`; 
-		} else {
-		  speakOutput = `${requestAttributes.t('PIN_INVALID')} `;
-		}
-        console.log('message is: ' + speakOutput);
-
-		return responseBuilder
-		.speak(speakOutput)
-		.withShouldEndSession(true)
-		.getResponse();				
-	  }
-	}
+    }
 };

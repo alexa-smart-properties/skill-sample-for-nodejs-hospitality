@@ -1652,6 +1652,70 @@
                     }
                 ]
             }
-        ]
+        ],
+        "_nameFreeInteraction": {
+            "ingressPoints": [
+                {
+                    "type": "INTENT",
+                    "name": "GeneralPropertyFeaturesIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "PropertyFeatureLocationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "PropertyFeatureOperatingHoursIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomDeliverableRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "CheckoutRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "HotelInformationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "CheckoutTimeIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "WifiAccessQAIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "WifiAccessFreeIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomCleaningRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "RoomCleaningCancelIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "BillingInformationIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "InRoomFoodRequestIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "GeneralRoomServiceIntent"
+                },
+                {
+                    "type": "INTENT",
+                    "name": "AmenityInformationIntent"
+                }
+            ]
+        }
     }
 }

@@ -27,7 +27,7 @@ This folder contains the sample skill's interaction model and metadata. The skil
 
 This folder contains the backend handlers for the sample skill. This sample uses Node.js runtime and can be hosted on AWS Lambda. However, you have the flexibility to decide where your backend will be hosted, and what programming language to code it with.
 
-Parts of the backend Lambda code requires you to supply your own values, such as, a cell number capable of receiving SMS text messages.  They are annotated with **TODO:** so you can change them.  The visual experience under the subfolder **/Lambda/apl** and **/Lambda/languages/data** can also be customized for your hospitality customers.  These will be described in detail in later sections.
+Parts of the backend Lambda code requires you to supply your own values, such as, a cell number capable of receiving SMS text messages.  They are annotated with in the comment so you know to change them.  The visual experience under the subfolder **/Lambda/apl** and **/Lambda/languages/data** can also be customized for your hospitality customers.  These will be described in detail in later sections.
 
 ### Multimodalcontent
 
@@ -74,7 +74,6 @@ Follow the recommended steps below to setup, host and configure this sample.
 Use [ASK CLI commands](https://developer.amazon.com/en-US/docs/alexa/smapi/ask-cli-command-reference.html) to perform initialization for the skill sample.
 By the end of this step, your skill should be initialized and ready to be deployed to your skill developer account with the ASK CLI. A  file named ask-resources.json will be generated in the root folder of  your skill sample.
    
-
  - In a terminal/PowerShell window, if needed, change directory to the workspace folder where the skill sample is located in. This should be the folder/directory that contains this README.md file, along with other sub folders such as assets/lambda/skill-package. Once in the root folder/directory of the skill sample, run the following command:
 
     ask init

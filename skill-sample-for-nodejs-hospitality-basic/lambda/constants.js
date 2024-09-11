@@ -17,77 +17,77 @@ module.exports = Object.freeze({
 
     FEATURES: {
         gym: {
-            image: 'gymGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/gymGH.jpg',
             text: 'Gym',
             hours: 'Open Daily. 6 a.m. to 10 p.m.',
             hintText: "Try, \"Alexa, where is the gym?\""
         },
         bar: {
-            image: 'barGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/barGH.jpg',
             text: 'Bar',
             hours: 'Open Daily. 12 p.m. to 11 p.m.',
             hintText: "Try, \"Alexa, where is the bar?\""
         },
         cafe:{
-            image: 'cafeGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/cafeGH.jpg',
             text: 'Cafe',
             hours: 'Open Daily. 5 a.m. to 6 p.m.',
             hintText: "Try, \"Alexa, where is the cafe?\""
         },
         pool:{
-            image: 'poolGH.jpg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/poolGH.jpg',
             text: 'Pool',
             hours: 'Open Daily. 6 a.m. to 8 p.m.',
             hintText: "Try, \"Alexa, where is the pool?\""
         },
         business:{
-            image: 'businessGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/businessGH.jpg',
             text: 'Business Center',
             hours: 'Open Daily. 12 p.m. to 11 p.m.',
             hintText: "Try, \"Alexa, where is the business center?\""
         },
         conference:{
-            image: 'conferenceGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/conferenceGH.jpg',
             text: 'Conference Center',
             hours: 'Open Daily. 8 a.m. to 10 p.m.',
             hintText: "Try, \"Alexa, where is the conference center?\""
         },
         shop:{
-            image: 'shopGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/shopGH.jpg',
             text: 'Gift Shop',
             hours: 'Open Daily. 9 a.m. to 8 p.m.',
             hintText: "Try, \"Alexa, where is the shop?\""
         },
         restaurant: {
-            image: 'restaurantGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/restaurantGH.jpg',
             text: 'Restaurant',
             hours: 'Open Daily. 6 a.m. to 10 p.m.',
             hintText: "Try, \"Alexa, where is the restaurant?\""
         },
         ballroom: {
-            image: 'ballroomGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/ballroomGH.jpg',
             text: 'Ballroom',
             hours: 'Available for Reservations',
             hintText: "Try, \"Alexa, where is the ballroom?\""
         },
         concierge: {
-            image: 'conciergeGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/conciergeGH.jpg',
             text: 'Concierge',
             hours: 'Open Daily. 8 a.m. to 8 p.m.',
             hintText: "Try, \"Alexa, where is the concierge?\""
         },
         spa: {
-            image: 'spaGH.jpeg',
+            image: 'https://d3oivqnhloy3be.cloudfront.net/spaGH.jpg',
             text: 'Spa',
             hours: 'Open Daily. 8 a.m. to 8 p.m.',
             hintText: "Try, \"Alexa, where is the spa?\""
         }
     },
     IMAGES: {
-        LOBBY: 'lobbyGH.jpeg',
-        TOWELS: 'towelsGH.jpeg',
-        LOGO: 'alexa_logo.png',
-        LUGGAGE: 'checkoutGH.jpeg',
-        ROOM: 'roomGH.jpeg'
+        LOBBY: 'https://d3oivqnhloy3be.cloudfront.net/lobbyGH.jpg',
+        TOWELS: 'https://d3oivqnhloy3be.cloudfront.net/towelsGH.jpg',
+        LOGO: 'https://d3oivqnhloy3be.cloudfront.net/alexa_logo.png',
+        LUGGAGE: 'https://d3oivqnhloy3be.cloudfront.net/checkoutGH.jpg',
+        ROOM: 'https://d3oivqnhloy3be.cloudfront.net/roomGH.jpg'
     }
 });

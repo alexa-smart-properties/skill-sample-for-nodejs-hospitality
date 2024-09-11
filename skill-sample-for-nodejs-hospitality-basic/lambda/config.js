@@ -3,7 +3,6 @@
 // Licensed under the Amazon Software License  http://aws.amazon.com/asl/
 
 module.exports = Object.freeze({
-    // DynamoDB Table name
-    TABLE_NAME: '<replace with your dynamodb table name>',
-    S3_BUCKET: '<replace with your s3 bucket name>',
+    TABLE_NAME: 'HotelDemoUsers',       // DynamoDB Table name for skill persistance variables
+    S3_BUCKET: 'hoteldemobucket'        // S3 Bucket name for skill assets
 });
