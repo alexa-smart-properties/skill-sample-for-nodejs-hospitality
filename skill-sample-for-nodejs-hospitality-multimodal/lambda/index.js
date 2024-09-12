@@ -81,19 +81,15 @@ const GetUserDataInterceptor = {
             // if current sessiona attributes is missing a PUID, grab it if we can to put it into the session attributes, and 
             // persist it 
             if (!Object.prototype.hasOwnProperty.call(sessionAttributes, "puid")) {
-                let persistent_uid = '';
-                if (Object.prototype.hasOwnProperty.call(handlerInput.requestEnvelope.request, "task")) {
-                    // launched from skill connection task
-                    persistent_uid = handlerInput.requestEnvelope.request.task.input.unitId;
-                }
-                else if (handlerInput.requestEnvelope.context.System.unit && handlerInput.requestEnvelope.context.System.unit.persistentUnitId) {
+                let persistent_uid = null;
+                if (handlerInput.requestEnvelope.context.System.unit && handlerInput.requestEnvelope.context.System.unit.persistentUnitId) {
                     // launched from normal launchrequest or intent request by voice or card coldlaunch
                     persistent_uid = handlerInput.requestEnvelope.context.System.unit.persistentUnitId;
                 } else {
                     console.log('this request has no persistent unit id.');
                 }
 
-                if (persistent_uid != '') {
+                if (persistent_uid) {
                     util.storeSessionAttribute(handlerInput, 'puid', persistent_uid);
                 }
 
