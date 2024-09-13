@@ -13,6 +13,6 @@ module.exports = Object.freeze({
     SECRET_MGR_S_NAME_ASP_SCOPE: 'lwa-auth-scope',          // Name of the secret key storing the scope
     SECRET_MGR_S_NAME_AUTH_URL: 'lwa-auth-url',             // Name of the secret key storing the auth url to get access token
     PBX_DEFAULT_EXTENSION: "9000",    // Update this to a working PBX extension your ASP Echo device can call.
-    GUEST_NUMBER: '+14258821099', 
+    GUEST_NUMBER: '+1234567890',     // update this with an actual phone number that the skill can text
     COMMUNICATION_PROVIDER_ID: 'amzn1.comms.csp.id.c0e1cd84-a846-11ed-afa1-0242ac120002'    // com profile id for pbx calling (do not change)
 });
