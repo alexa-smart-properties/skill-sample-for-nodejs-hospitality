@@ -9,8 +9,8 @@
   "author": "Amazon Alexa",
   "license": "LicenseRef-.amazon.com.-AmznSL-1.0",
   "dependencies": {
-    "@aws-sdk/client-s3": "^3.395.0",
-    "@aws-sdk/client-secrets-manager": "^3.395.0",
+    "@aws-sdk/client-s3": "^3.995.0",
+    "@aws-sdk/client-secrets-manager": "^3.995.0",
     "ask-sdk": "^2.12.1",
     "aws-sdk": "^2.1162.0",
     "axios": "^1.12.0",
